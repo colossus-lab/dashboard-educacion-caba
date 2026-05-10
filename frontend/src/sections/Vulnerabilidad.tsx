@@ -393,13 +393,13 @@ export default function Vulnerabilidad() {
                   <div style={{ fontSize: 10, fontWeight: 600, color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.12em" }}>
                     Colegio · {hoveredSchool.ges}
                   </div>
-                  <div style={{ marginTop: 4, fontSize: 13, fontWeight: 700, color: "var(--ink)", fontFamily: "var(--font-serif)" }}>
+                  <div style={{ marginTop: 4, fontSize: 13, fontWeight: 700, color: "var(--ink)", fontFamily: "var(--font-sans)" }}>
                     {hoveredSchool.nombre}
                   </div>
                   <div style={{ marginTop: 4, fontSize: 11, color: "var(--ink-3)" }}>
                     {hoveredSchool.barrio} · Comuna {hoveredSchool.comuna}
                   </div>
-                  <div style={{ marginTop: 6, fontSize: 18, fontWeight: 700, fontFamily: "var(--font-serif)", color: "var(--ink)" }}>
+                  <div style={{ marginTop: 6, fontSize: 18, fontWeight: 700, fontFamily: "var(--font-sans)", color: "var(--ink)" }}>
                     {hoveredSchool.vulnerability_decile != null ? `Decil ${hoveredSchool.vulnerability_decile}` : "—"}
                   </div>
                 </>
@@ -411,7 +411,7 @@ export default function Vulnerabilidad() {
                   <div style={{ marginTop: 4, fontSize: 12, fontWeight: 600, color: "var(--ink)", fontFamily: "var(--font-mono)" }}>
                     {hoveredRadio.radio_id}
                   </div>
-                  <div style={{ marginTop: 6, fontSize: 18, fontWeight: 700, fontFamily: "var(--font-serif)", color: "var(--ink)" }}>
+                  <div style={{ marginTop: 6, fontSize: 18, fontWeight: 700, fontFamily: "var(--font-sans)", color: "var(--ink)" }}>
                     {spec.format(((hoveredRadio as any)[radioMetric] ?? 0))}
                   </div>
                   <div style={{ fontSize: 10, color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
@@ -484,7 +484,7 @@ export default function Vulnerabilidad() {
                   background: "none", border: "none", cursor: "pointer", color: "var(--ink-3)", fontSize: 18, lineHeight: 1, padding: 0,
                 }}>×</button>
               </div>
-              <h4 style={{ margin: "6px 0 4px", fontFamily: "var(--font-serif)", fontSize: 15, fontWeight: 700 }}>{selectedSchool.nombre}</h4>
+              <h4 style={{ margin: "6px 0 4px", fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 700 }}>{selectedSchool.nombre}</h4>
               <span className={`tag tag-${selectedSchool.ges?.toLowerCase()}`}>{selectedSchool.ges}</span>
               <div style={{ fontSize: 11, color: "var(--ink-3)", marginTop: 6 }}>
                 {selectedSchool.direccion}<br />{selectedSchool.barrio} · Comuna {selectedSchool.comuna}<br />
@@ -492,7 +492,7 @@ export default function Vulnerabilidad() {
               </div>
               <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid var(--border)" }}>
                 <div className="insight-eyebrow">Contexto censal del radio</div>
-                <div style={{ marginTop: 4, fontSize: 22, fontFamily: "var(--font-serif)", fontWeight: 700,
+                <div style={{ marginTop: 4, fontSize: 22, fontFamily: "var(--font-sans)", fontWeight: 700,
                   color: (selectedSchool.vulnerability_decile ?? 0) >= 9 ? "var(--danger)" :
                          (selectedSchool.vulnerability_decile ?? 0) >= 7 ? "var(--warning)" : "var(--ink)" }}>
                   Decil {selectedSchool.vulnerability_decile ?? "—"}
