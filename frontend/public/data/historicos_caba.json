@@ -1,0 +1,360 @@
+{
+  "esperanza_vida_escolar": [
+    {
+      "anio": 1980,
+      "sexo": "m",
+      "valor": 11.582647544359894
+    },
+    {
+      "anio": 1980,
+      "sexo": "v",
+      "valor": 11.642691454006494
+    },
+    {
+      "anio": 1991,
+      "sexo": "m",
+      "valor": 12.323490270508804
+    },
+    {
+      "anio": 1991,
+      "sexo": "v",
+      "valor": 12.30543467701406
+    },
+    {
+      "anio": 2001,
+      "sexo": "m",
+      "valor": 12.591456799247243
+    },
+    {
+      "anio": 2001,
+      "sexo": "v",
+      "valor": 12.527164962098034
+    },
+    {
+      "anio": 2010,
+      "sexo": "m",
+      "valor": 12.586378835082412
+    },
+    {
+      "anio": 2010,
+      "sexo": "v",
+      "valor": 12.560747597246074
+    }
+  ],
+  "brecha_analfabetismo": [
+    {
+      "anio": 1960,
+      "valor": 2.1
+    },
+    {
+      "anio": 1970,
+      "valor": 1.9
+    },
+    {
+      "anio": 1980,
+      "valor": 1.9
+    },
+    {
+      "anio": 1991,
+      "valor": 1.6
+    },
+    {
+      "anio": 2001,
+      "valor": 1.3
+    },
+    {
+      "anio": 2010,
+      "valor": 1.1
+    }
+  ],
+  "tasa_escolarizacion": [
+    {
+      "anio": 2010,
+      "sexo": "m",
+      "tasa": 98.69168531588913,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2010,
+      "sexo": "m",
+      "tasa": 90.83431925737169,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2010,
+      "sexo": "m",
+      "tasa": 56.04559215206207,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2010,
+      "sexo": "v",
+      "tasa": 99.246793532269,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2010,
+      "sexo": "v",
+      "tasa": 87.40919567853359,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2010,
+      "sexo": "v",
+      "tasa": 47.47069585442289,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2011,
+      "sexo": "m",
+      "tasa": 97.61376825402323,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2011,
+      "sexo": "m",
+      "tasa": 93.5625938058042,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2011,
+      "sexo": "m",
+      "tasa": 54.7149521797455,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2011,
+      "sexo": "v",
+      "tasa": 97.95319715370331,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2011,
+      "sexo": "v",
+      "tasa": 89.22055204116917,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2011,
+      "sexo": "v",
+      "tasa": 50.721181672956256,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2012,
+      "sexo": "m",
+      "tasa": 98.23685725325069,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2012,
+      "sexo": "m",
+      "tasa": 89.68587067044547,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2012,
+      "sexo": "m",
+      "tasa": 58.801199603190526,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2012,
+      "sexo": "v",
+      "tasa": 97.97091778143331,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2012,
+      "sexo": "v",
+      "tasa": 87.9207671221367,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2012,
+      "sexo": "v",
+      "tasa": 47.95064960871522,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2013,
+      "sexo": "m",
+      "tasa": 99.0,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2013,
+      "sexo": "m",
+      "tasa": 91.4,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2013,
+      "sexo": "m",
+      "tasa": 57.5,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2013,
+      "sexo": "v",
+      "tasa": 99.1,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2013,
+      "sexo": "v",
+      "tasa": 88.2,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2013,
+      "sexo": "v",
+      "tasa": 44.8,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2014,
+      "sexo": "m",
+      "tasa": 97.1,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2014,
+      "sexo": "m",
+      "tasa": 87.8,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2014,
+      "sexo": "m",
+      "tasa": 53.1,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2014,
+      "sexo": "v",
+      "tasa": 97.5,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2014,
+      "sexo": "v",
+      "tasa": 89.0,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2014,
+      "sexo": "v",
+      "tasa": 46.2,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2015,
+      "sexo": "m",
+      "tasa": 98.8,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2015,
+      "sexo": "m",
+      "tasa": 90.8,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2015,
+      "sexo": "m",
+      "tasa": 56.7,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2015,
+      "sexo": "v",
+      "tasa": 98.5,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2015,
+      "sexo": "v",
+      "tasa": 87.8,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2015,
+      "sexo": "v",
+      "tasa": 48.5,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2016,
+      "sexo": "m",
+      "tasa": 98.53331130152884,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2016,
+      "sexo": "m",
+      "tasa": 90.67581539618385,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2016,
+      "sexo": "m",
+      "tasa": 53.84275647062644,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2016,
+      "sexo": "v",
+      "tasa": 97.26604090781731,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2016,
+      "sexo": "v",
+      "tasa": 85.96493293925086,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2016,
+      "sexo": "v",
+      "tasa": 48.36880560137253,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2017,
+      "sexo": "m",
+      "tasa": 98.7,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2017,
+      "sexo": "m",
+      "tasa": 93.1,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2017,
+      "sexo": "m",
+      "tasa": 52.6,
+      "nivel": "Superior"
+    },
+    {
+      "anio": 2017,
+      "sexo": "v",
+      "tasa": 97.7,
+      "nivel": "Primario"
+    },
+    {
+      "anio": 2017,
+      "sexo": "v",
+      "tasa": 89.8,
+      "nivel": "Secundario / Medio"
+    },
+    {
+      "anio": 2017,
+      "sexo": "v",
+      "tasa": 49.9,
+      "nivel": "Superior"
+    }
+  ]
+}

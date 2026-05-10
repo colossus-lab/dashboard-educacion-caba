@@ -1,0 +1,245 @@
+{
+  "total_pais": 64606,
+  "por_jurisdiccion": [
+    {
+      "jurisdiccion": "Buenos Aires",
+      "total": 19951,
+      "estatal": 14494,
+      "privado": 5457,
+      "urbano": 17057,
+      "rural": 2886,
+      "pct_estatal": 72.65,
+      "pct_urbano": 85.49
+    },
+    {
+      "jurisdiccion": "Córdoba",
+      "total": 5471,
+      "estatal": 4365,
+      "privado": 1106,
+      "urbano": 3781,
+      "rural": 1690,
+      "pct_estatal": 79.78,
+      "pct_urbano": 69.11
+    },
+    {
+      "jurisdiccion": "Santa Fe",
+      "total": 5042,
+      "estatal": 4100,
+      "privado": 940,
+      "urbano": 3866,
+      "rural": 1176,
+      "pct_estatal": 81.32,
+      "pct_urbano": 76.68
+    },
+    {
+      "jurisdiccion": "Chaco",
+      "total": 3109,
+      "estatal": 2650,
+      "privado": 375,
+      "urbano": 2089,
+      "rural": 1020,
+      "pct_estatal": 85.24,
+      "pct_urbano": 67.19
+    },
+    {
+      "jurisdiccion": "Misiones",
+      "total": 3000,
+      "estatal": 2731,
+      "privado": 269,
+      "urbano": 1818,
+      "rural": 1182,
+      "pct_estatal": 91.03,
+      "pct_urbano": 60.6
+    },
+    {
+      "jurisdiccion": "Entre Ríos",
+      "total": 2971,
+      "estatal": 2497,
+      "privado": 465,
+      "urbano": 1931,
+      "rural": 1040,
+      "pct_estatal": 84.05,
+      "pct_urbano": 64.99
+    },
+    {
+      "jurisdiccion": "Mendoza",
+      "total": 2875,
+      "estatal": 2043,
+      "privado": 385,
+      "urbano": 2114,
+      "rural": 761,
+      "pct_estatal": 71.06,
+      "pct_urbano": 73.53
+    },
+    {
+      "jurisdiccion": "Ciudad de Buenos Aires",
+      "total": 2745,
+      "estatal": 1770,
+      "privado": 975,
+      "urbano": 2744,
+      "rural": 1,
+      "pct_estatal": 64.48,
+      "pct_urbano": 99.96
+    },
+    {
+      "jurisdiccion": "Santiago del Estero",
+      "total": 2329,
+      "estatal": 2177,
+      "privado": 152,
+      "urbano": 766,
+      "rural": 1563,
+      "pct_estatal": 93.47,
+      "pct_urbano": 32.89
+    },
+    {
+      "jurisdiccion": "Tucumán",
+      "total": 2117,
+      "estatal": 1718,
+      "privado": 399,
+      "urbano": 1305,
+      "rural": 812,
+      "pct_estatal": 81.15,
+      "pct_urbano": 61.64
+    },
+    {
+      "jurisdiccion": "Corrientes",
+      "total": 2051,
+      "estatal": 1841,
+      "privado": 210,
+      "urbano": 1063,
+      "rural": 988,
+      "pct_estatal": 89.76,
+      "pct_urbano": 51.83
+    },
+    {
+      "jurisdiccion": "Formosa",
+      "total": 1719,
+      "estatal": 1627,
+      "privado": 65,
+      "urbano": 757,
+      "rural": 962,
+      "pct_estatal": 94.65,
+      "pct_urbano": 44.04
+    },
+    {
+      "jurisdiccion": "Salta",
+      "total": 1508,
+      "estatal": 1340,
+      "privado": 168,
+      "urbano": 932,
+      "rural": 576,
+      "pct_estatal": 88.86,
+      "pct_urbano": 61.8
+    },
+    {
+      "jurisdiccion": "San Juan",
+      "total": 1362,
+      "estatal": 1152,
+      "privado": 210,
+      "urbano": 792,
+      "rural": 570,
+      "pct_estatal": 84.58,
+      "pct_urbano": 58.15
+    },
+    {
+      "jurisdiccion": "Río Negro",
+      "total": 1352,
+      "estatal": 1108,
+      "privado": 206,
+      "urbano": 1080,
+      "rural": 272,
+      "pct_estatal": 81.95,
+      "pct_urbano": 79.88
+    },
+    {
+      "jurisdiccion": "Jujuy",
+      "total": 1082,
+      "estatal": 943,
+      "privado": 123,
+      "urbano": 725,
+      "rural": 357,
+      "pct_estatal": 87.15,
+      "pct_urbano": 67.01
+    },
+    {
+      "jurisdiccion": "Catamarca",
+      "total": 1075,
+      "estatal": 1036,
+      "privado": 39,
+      "urbano": 394,
+      "rural": 681,
+      "pct_estatal": 96.37,
+      "pct_urbano": 36.65
+    },
+    {
+      "jurisdiccion": "Neuquén",
+      "total": 987,
+      "estatal": 820,
+      "privado": 167,
+      "urbano": 754,
+      "rural": 233,
+      "pct_estatal": 83.08,
+      "pct_urbano": 76.39
+    },
+    {
+      "jurisdiccion": "Chubut",
+      "total": 864,
+      "estatal": 712,
+      "privado": 138,
+      "urbano": 676,
+      "rural": 188,
+      "pct_estatal": 82.41,
+      "pct_urbano": 78.24
+    },
+    {
+      "jurisdiccion": "La Rioja",
+      "total": 861,
+      "estatal": 813,
+      "privado": 48,
+      "urbano": 454,
+      "rural": 406,
+      "pct_estatal": 94.43,
+      "pct_urbano": 52.73
+    },
+    {
+      "jurisdiccion": "La Pampa",
+      "total": 770,
+      "estatal": 717,
+      "privado": 53,
+      "urbano": 528,
+      "rural": 242,
+      "pct_estatal": 93.12,
+      "pct_urbano": 68.57
+    },
+    {
+      "jurisdiccion": "San Luis",
+      "total": 713,
+      "estatal": 650,
+      "privado": 63,
+      "urbano": 345,
+      "rural": 368,
+      "pct_estatal": 91.16,
+      "pct_urbano": 48.39
+    },
+    {
+      "jurisdiccion": "Santa Cruz",
+      "total": 406,
+      "estatal": 343,
+      "privado": 63,
+      "urbano": 366,
+      "rural": 40,
+      "pct_estatal": 84.48,
+      "pct_urbano": 90.15
+    },
+    {
+      "jurisdiccion": "Tierra del Fuego",
+      "total": 246,
+      "estatal": 214,
+      "privado": 32,
+      "urbano": 240,
+      "rural": 6,
+      "pct_estatal": 86.99,
+      "pct_urbano": 97.56
+    }
+  ]
+}

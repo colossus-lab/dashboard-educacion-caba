@@ -1,0 +1,212 @@
+{
+  "anio_actual": 2024,
+  "estudiantes": [
+    {
+      "nivel": "Total",
+      "total": 555922,
+      "estatal": 282449,
+      "privado": 273473
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 91844,
+      "estatal": 46619,
+      "privado": 45225
+    },
+    {
+      "nivel": "Primario común",
+      "total": 263606,
+      "estatal": 132915,
+      "privado": 130691
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 200472,
+      "estatal": 102915,
+      "privado": 97557
+    },
+    {
+      "nivel": "Total",
+      "total": 7858,
+      "estatal": 4015,
+      "privado": 3843
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 216,
+      "estatal": 106,
+      "privado": 110
+    },
+    {
+      "nivel": "Primario común",
+      "total": 1055,
+      "estatal": 542,
+      "privado": 513
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 6587,
+      "estatal": 3367,
+      "privado": 3220
+    },
+    {
+      "nivel": "Total",
+      "total": 547893,
+      "estatal": 278351,
+      "privado": 269542
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 91457,
+      "estatal": 46430,
+      "privado": 45027
+    },
+    {
+      "nivel": "Primario común",
+      "total": 262551,
+      "estatal": 132373,
+      "privado": 130178
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 193885,
+      "estatal": 99548,
+      "privado": 94337
+    },
+    {
+      "nivel": "Total",
+      "total": 171,
+      "estatal": 83,
+      "privado": 88
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 171,
+      "estatal": 83,
+      "privado": 88
+    }
+  ],
+  "unidades": [
+    {
+      "nivel": "Total",
+      "total": 2143,
+      "estatal": 907,
+      "privado": 1236
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 752,
+      "estatal": 275,
+      "privado": 477
+    },
+    {
+      "nivel": "Primario común",
+      "total": 892,
+      "estatal": 469,
+      "privado": 423
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 499,
+      "estatal": 163,
+      "privado": 336
+    },
+    {
+      "nivel": "Total",
+      "total": 12,
+      "estatal": 12,
+      "privado": null
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 2,
+      "estatal": 2,
+      "privado": null
+    },
+    {
+      "nivel": "Primario común",
+      "total": 3,
+      "estatal": 3,
+      "privado": null
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 7,
+      "estatal": 7,
+      "privado": null
+    },
+    {
+      "nivel": "Total",
+      "total": 2130,
+      "estatal": 894,
+      "privado": 1236
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 749,
+      "estatal": 272,
+      "privado": 477
+    },
+    {
+      "nivel": "Primario común",
+      "total": 889,
+      "estatal": 466,
+      "privado": 423
+    },
+    {
+      "nivel": "Secundario común",
+      "total": 492,
+      "estatal": 156,
+      "privado": 336
+    },
+    {
+      "nivel": "Total",
+      "total": 1,
+      "estatal": 1,
+      "privado": null
+    },
+    {
+      "nivel": "Inicial común",
+      "total": 1,
+      "estatal": 1,
+      "privado": null
+    }
+  ],
+  "docentes_capacitados_total": 14406,
+  "evolucion_jurisdiccional_metadata": {
+    "2019": {
+      "filename": "Datos_ESI_2019.csv",
+      "rows": 706,
+      "headers": [
+        "año ,jurisdiccion,tipo_de_pregunta,id_pregunta,pregunta,respuesta"
+      ]
+    },
+    "2020": {
+      "filename": "datos_esi_2020.csv",
+      "rows": 873,
+      "headers": [
+        "1. �Cu�ntas normativas que regulen las acciones de implementaci�n de la ESI posee la jurisdicci�n?",
+        "31",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "2021": {
+      "filename": "datos_esi_2021.csv",
+      "rows": 1027,
+      "headers": [
+        "1. �La jurisdicci�n posee normas�del �mbito educativo�que refuercen el derecho a la ESI, su regulaci�n e implementaci�n�vigentes en�{H1.NAOK}? �Cu�ntas?",
+        "9"
+      ]
+    },
+    "2018": {
+      "filename": "datos_esi_ogp_2018.csv",
+      "rows": 120,
+      "headers": [
+        "año,jurisdiccion,tipo_de_pregunta,id_pregunta,pregunta,respuesta"
+      ]
+    }
+  }
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "tipo_oferta": "Total",
+    "modalidad": "",
+    "nivel": "Total",
+    "total_matricula": 906406,
+    "total_mujeres_pct": 52.1,
+    "estatal_matricula": 537219,
+    "estatal_mujeres_pct": 52.37,
+    "privado_matricula": 369187,
+    "privado_mujeres_pct": 51.6
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Total",
+    "nivel": "Total",
+    "total_matricula": 746448,
+    "total_mujeres_pct": 51.2,
+    "estatal_matricula": 391496,
+    "estatal_mujeres_pct": 50.69,
+    "privado_matricula": 354952,
+    "privado_mujeres_pct": 51.8
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Común",
+    "nivel": "Total",
+    "total_matricula": 663822,
+    "total_mujeres_pct": 51.4,
+    "estatal_matricula": 314257,
+    "estatal_mujeres_pct": 50.76,
+    "privado_matricula": 349565,
+    "privado_mujeres_pct": 52.0
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Común",
+    "nivel": "Inicial",
+    "total_matricula": 91457,
+    "total_mujeres_pct": 49.2,
+    "estatal_matricula": 43065,
+    "estatal_mujeres_pct": 48.8,
+    "privado_matricula": 48392,
+    "privado_mujeres_pct": 49.6
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Común",
+    "nivel": "Primario",
+    "total_matricula": 262551,
+    "total_mujeres_pct": 49.6,
+    "estatal_matricula": 135106,
+    "estatal_mujeres_pct": 48.7,
+    "privado_matricula": 127445,
+    "privado_mujeres_pct": 50.5
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Común",
+    "nivel": "Secundario",
+    "total_matricula": 193885,
+    "total_mujeres_pct": 48.7,
+    "estatal_matricula": 95072,
+    "estatal_mujeres_pct": 46.0,
+    "privado_matricula": 98813,
+    "privado_mujeres_pct": 51.2
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Común",
+    "nivel": "Superior",
+    "total_matricula": 115929,
+    "total_mujeres_pct": 61.7,
+    "estatal_matricula": 41014,
+    "estatal_mujeres_pct": 70.59,
+    "privado_matricula": 74915,
+    "privado_mujeres_pct": 56.9
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Especial",
+    "nivel": "Total",
+    "total_matricula": 5034,
+    "total_mujeres_pct": 30.7,
+    "estatal_matricula": 2713,
+    "estatal_mujeres_pct": 31.22,
+    "privado_matricula": 2321,
+    "privado_mujeres_pct": 30.0
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Especial",
+    "nivel": "Inicial",
+    "total_matricula": 365,
+    "total_mujeres_pct": 34.0,
+    "estatal_matricula": 285,
+    "estatal_mujeres_pct": 32.63,
+    "privado_matricula": 80,
+    "privado_mujeres_pct": 38.8
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Especial",
+    "nivel": "Primario",
+    "total_matricula": 4206,
+    "total_mujeres_pct": 30.0,
+    "estatal_matricula": 2428,
+    "estatal_mujeres_pct": 31.05,
+    "privado_matricula": 1778,
+    "privado_mujeres_pct": 28.5
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Especial",
+    "nivel": "Secundario",
+    "total_matricula": 463,
+    "total_mujeres_pct": 34.3,
+    "estatal_matricula": null,
+    "estatal_mujeres_pct": null,
+    "privado_matricula": 463,
+    "privado_mujeres_pct": 34.3
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Adultos",
+    "nivel": "Total",
+    "total_matricula": 77592,
+    "total_mujeres_pct": 51.0,
+    "estatal_matricula": 74526,
+    "estatal_mujeres_pct": 51.1,
+    "privado_matricula": 3066,
+    "privado_mujeres_pct": 48.0
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Adultos",
+    "nivel": "Primario",
+    "total_matricula": 3553,
+    "total_mujeres_pct": 62.9,
+    "estatal_matricula": 3372,
+    "estatal_mujeres_pct": 62.19,
+    "privado_matricula": 181,
+    "privado_mujeres_pct": 76.2
+  },
+  {
+    "tipo_oferta": "Servicios educativos",
+    "modalidad": "Adultos",
+    "nivel": "Secundario",
+    "total_matricula": 74039,
+    "total_mujeres_pct": 50.4,
+    "estatal_matricula": 71154,
+    "estatal_mujeres_pct": 50.58,
+    "privado_matricula": 2885,
+    "privado_mujeres_pct": 46.2
+  },
+  {
+    "tipo_oferta": "Otros servicios educativos",
+    "modalidad": "Adultos",
+    "nivel": "Total",
+    "total_matricula": 159958,
+    "total_mujeres_pct": 56.0,
+    "estatal_matricula": 145723,
+    "estatal_mujeres_pct": 56.9,
+    "privado_matricula": 14235,
+    "privado_mujeres_pct": 46.8
+  }
+]

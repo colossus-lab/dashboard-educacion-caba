@@ -1,0 +1,30 @@
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/tsconfig.tsbuildinfo
+frontend/.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Raw data (descargado de CKAN/INDEC, regenerable con scripts/download_caba_education.py)
+data/raw/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Secrets (por las dudas, aunque el proyecto no usa)
+.env
+.env.local
+*.pem
+*.key

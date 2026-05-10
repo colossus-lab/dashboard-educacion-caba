@@ -1,0 +1,26 @@
+{
+  "anio": 2024,
+  "total": 113698,
+  "por_nivel": [
+    {
+      "nivel": "Inicial",
+      "beneficiarios": 4172
+    },
+    {
+      "nivel": "Primario",
+      "beneficiarios": 37486
+    },
+    {
+      "nivel": "Secundario",
+      "beneficiarios": 71723
+    },
+    {
+      "nivel": "CFP",
+      "beneficiarios": 200
+    },
+    {
+      "nivel": "Especial",
+      "beneficiarios": 117
+    }
+  ]
+}

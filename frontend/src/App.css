@@ -1,0 +1,495 @@
+/* ─────────────────────────────────────────────────────────
+   TABLERO EDUCACIÓN CABA — Theme institucional GCBA
+   Paleta: amarillo GCBA + navy + crema + grises sobrios
+   ───────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --bg:        #f6f5f0;     /* fondo crema-paper */
+  --surface:   #ffffff;     /* cards principales */
+  --surface-2: #faf9f4;     /* cards secundarias */
+  --surface-3: #efece2;     /* hover / banded rows */
+
+  /* Text */
+  --ink:       #1a2236;     /* navy oscuro principal */
+  --ink-2:     #34405c;     /* navy medio */
+  --ink-3:     #6b7791;     /* gris medio */
+  --ink-4:     #a3acc2;     /* gris claro */
+
+  /* Brand GCBA */
+  --gcba-yellow:      #ffcc00;
+  --gcba-yellow-dark: #e6b800;
+  --gcba-cyan:        #00aae5;
+  --navy:             #0d1b3d;
+  --navy-2:           #1a2755;
+
+  /* Data viz palette (sobria) */
+  --estatal:   #1a2755;     /* navy */
+  --privada:   #d4a017;     /* dorado mostaza */
+  --acento-1:  #2a7f8e;     /* teal sobrio */
+  --acento-2:  #8b6f47;     /* tierra */
+  --acento-3:  #b0455e;     /* burdeos */
+  --good:      #2f7d52;
+  --warning:   #c47600;
+  --danger:    #a8312f;
+
+  /* Borders */
+  --border:    #e3dfd2;
+  --border-2:  #d5cfbc;
+
+  /* Shadows (sutiles) */
+  --shadow-sm: 0 1px 2px rgba(13, 27, 61, 0.04);
+  --shadow:    0 1px 3px rgba(13, 27, 61, 0.06), 0 1px 2px rgba(13, 27, 61, 0.04);
+  --shadow-lg: 0 4px 12px rgba(13, 27, 61, 0.08);
+
+  /* Typography */
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; padding: 0; min-height: 100vh; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ────────── TOPBAR institucional ────────── */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+.topbar-band {
+  height: 4px;
+  background: var(--gcba-yellow);
+}
+.topbar-inner {
+  max-width: 1400px; margin: 0 auto; padding: 18px 28px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex; align-items: center; gap: 14px;
+}
+.brand-mark {
+  width: 40px; height: 40px;
+  background: var(--navy);
+  border-radius: 4px;
+  display: grid; place-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.brand-mark::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 0; height: 6px;
+  background: var(--gcba-yellow);
+  border-radius: 4px 4px 0 0;
+}
+.brand-mark-text {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--gcba-yellow);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-top: 6px;
+}
+.brand-text {
+  display: flex; flex-direction: column; line-height: 1.15;
+}
+.brand-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.brand-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.topbar-meta {
+  display: flex; flex-direction: column; align-items: flex-end;
+  font-size: 11px; color: var(--ink-3);
+}
+.topbar-meta strong { color: var(--ink); font-weight: 600; }
+
+.nav {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  max-width: 1400px; margin: 0 auto;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+}
+.nav button {
+  background: transparent; color: var(--ink-3);
+  border: none; border-bottom: 2px solid transparent;
+  padding: 14px 16px; font-size: 13.5px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.01em;
+  margin-bottom: -1px;
+}
+.nav button:hover { color: var(--ink); }
+.nav button.active {
+  color: var(--ink);
+  border-bottom-color: var(--navy);
+  font-weight: 600;
+}
+
+/* ────────── KPI Header ────────── */
+.kpi-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.kpi-row {
+  max-width: 1400px; margin: 0 auto; padding: 24px 28px;
+  display: grid; gap: 1px;
+  background: var(--border);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border-radius: 6px;
+  overflow: hidden;
+}
+.kpi {
+  background: var(--surface);
+  padding: 18px 20px;
+  position: relative;
+}
+.kpi-label {
+  font-size: 10.5px;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.kpi-value {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 6px;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+.kpi-sub {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin-top: 6px;
+  line-height: 1.35;
+}
+.kpi-trend {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.kpi-trend.up { color: var(--good); }
+.kpi-trend.down { color: var(--danger); }
+.kpi-trend.flat { color: var(--ink-3); }
+
+/* ────────── Main ────────── */
+.main {
+  flex: 1; max-width: 1400px; width: 100%;
+  margin: 0 auto; padding: 32px 28px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 28px; font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.section-desc {
+  color: var(--ink-3);
+  font-size: 14px;
+  margin: 0 0 24px;
+  max-width: 720px;
+}
+
+/* ────────── Cards ────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.card h3 {
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.card-grid {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+}
+
+/* ────────── Filters ────────── */
+.filters {
+  display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end;
+  margin-bottom: 18px; padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+.filters label {
+  font-size: 11px;
+  color: var(--ink-3);
+  display: flex; flex-direction: column; gap: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.filters select, .filters input {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  min-width: 140px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.filters select:focus, .filters input:focus {
+  outline: none; border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(26, 39, 85, 0.1);
+}
+.filters input[type="search"] { min-width: 240px; }
+
+/* ────────── Map ────────── */
+.map-container {
+  height: 600px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.legend {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-top: 12px; font-size: 12px; color: var(--ink-3);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { width: 14px; height: 14px; border-radius: 3px; }
+
+/* ────────── Tables ────────── */
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th, .table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.table th {
+  color: var(--ink-3);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--surface-2);
+}
+.table tr:hover td { background: var(--surface-3); }
+.table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ────────── Footer ────────── */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 18px 28px;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+.footer-band {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gcba-yellow) 0%, var(--gcba-yellow) 50%, var(--navy) 50%, var(--navy) 100%);
+}
+
+/* ────────── States ────────── */
+.loading, .error {
+  padding: 48px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 14px;
+}
+.error { color: var(--danger); }
+
+/* ────────── Tags ────────── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 10.5px;
+  background: var(--surface-3);
+  color: var(--ink-2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tag-estatal { background: rgba(26, 39, 85, 0.08); color: var(--estatal); }
+.tag-privada { background: rgba(212, 160, 23, 0.12); color: var(--privada); }
+.tag-privado { background: rgba(212, 160, 23, 0.12); color: var(--privada); }
+
+/* ────────── Map popup ────────── */
+.school-popup { font-size: 13px; max-width: 280px; }
+.school-popup b {
+  display: block; margin-bottom: 4px;
+  font-family: var(--font-serif);
+  font-size: 14px; font-weight: 700;
+  color: var(--ink);
+}
+.school-popup .meta { color: var(--ink-3); font-size: 11px; margin-top: 6px; }
+
+/* ────────── Insights cards (Resumen Ejecutivo) ────────── */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: 4px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.insight-card.up    { border-left-color: var(--good); }
+.insight-card.down  { border-left-color: var(--warning); }
+.insight-card.alert { border-left-color: var(--danger); }
+.insight-card.info  { border-left-color: var(--gcba-cyan); }
+.insight-card.terr  { border-left-color: var(--gcba-yellow-dark); }
+
+.insight-eyebrow {
+  font-size: 10.5px; font-weight: 600;
+  color: var(--ink-3);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  display: flex; align-items: center; gap: 6px;
+}
+.insight-headline {
+  font-family: var(--font-serif);
+  font-size: 17px; font-weight: 700;
+  color: var(--ink);
+  margin: 6px 0 8px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.insight-detail {
+  font-size: 12.5px; color: var(--ink-2);
+  line-height: 1.5;
+}
+.insight-metric {
+  font-family: var(--font-serif);
+  font-size: 22px; font-weight: 700;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+/* ────────── Hero (Resumen) ────────── */
+.hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gcba-yellow);
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600;
+  color: var(--ink-3);
+  text-transform: uppercase; letter-spacing: 0.14em;
+  margin-bottom: 10px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 36px; font-weight: 700;
+  color: var(--ink); margin: 0 0 8px;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.hero-subtitle {
+  font-size: 15px; color: var(--ink-2);
+  margin: 0; max-width: 680px;
+}
+
+/* ────────── Recharts overrides ────────── */
+.recharts-cartesian-axis-tick-value { font-size: 11.5px; fill: var(--ink-3); }
+.recharts-legend-item-text { font-size: 12.5px !important; color: var(--ink-2) !important; }
+.recharts-tooltip-wrapper {
+  font-family: var(--font-sans) !important;
+}
+.recharts-default-tooltip {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-2) !important;
+  border-radius: 4px !important;
+  box-shadow: var(--shadow-lg) !important;
+  font-size: 12.5px !important;
+}
+.recharts-tooltip-label { color: var(--ink) !important; font-weight: 600 !important; }
+
+/* ────────── Leaflet light theme ────────── */
+.leaflet-container { background: #e9eadf !important; }
+.leaflet-tile { filter: grayscale(0.3) brightness(1.02); }
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  box-shadow: var(--shadow-lg);
+}
+.leaflet-control-layers {
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* ────────── Pagination ────────── */
+.pagination button {
+  background: var(--surface);
+  color: var(--ink-2);
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.pagination button:hover:not(:disabled) {
+  background: var(--surface-3);
+  border-color: var(--navy);
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
