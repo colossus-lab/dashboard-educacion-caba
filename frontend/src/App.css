@@ -68,42 +68,48 @@ body {
 .app { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* ──────────────── TOPBAR institucional ──────────────── */
+/* Estilo similar al sitio oficial buenosaires.gob.ar:
+   banding amarillo arriba → header blanco con logo color → strip navy con tabs */
 .topbar {
-  background: var(--gcba-navy);
-  color: var(--gcba-offwhite);
+  background: var(--surface);
+  color: var(--ink);
   position: sticky; top: 0; z-index: 100;
   box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
 }
 .topbar-band {
   height: 6px;
   background: var(--gcba-yellow);
 }
 .topbar-inner {
-  max-width: 1400px; margin: 0 auto; padding: 18px 28px 14px;
+  max-width: 1400px; margin: 0 auto; padding: 16px 28px;
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   flex-wrap: wrap;
 }
 
-/* ── Logo BA escudo (recreación según manual GCBA p. 22, 34) */
+/* ── Logo oficial BA */
 .brand {
-  display: flex; align-items: center; gap: 16px;
+  display: flex; align-items: center; gap: 18px;
 }
-.brand-logo {
-  width: 44px; height: 44px;
-  background: var(--gcba-yellow);
-  border-radius: 4px;
-  display: grid; place-items: center;
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
   flex-shrink: 0;
-  position: relative;
 }
-.brand-logo svg { display: block; }
+.brand-divider {
+  width: 1px;
+  height: 38px;
+  background: var(--border-2);
+  flex-shrink: 0;
+}
 .brand-text {
   display: flex; flex-direction: column; line-height: 1.2;
 }
 .brand-eyebrow {
   font-family: var(--font-sans);
-  font-size: 11px; font-weight: 500;
-  color: var(--gcba-cyan);
+  font-size: 11px; font-weight: 600;
+  color: var(--ink-3);
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }
@@ -111,38 +117,40 @@ body {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 22px;
-  color: var(--gcba-offwhite);
+  color: var(--gcba-navy);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 .topbar-meta {
   display: flex; flex-direction: column; align-items: flex-end;
-  font-size: 11px; color: rgba(252,252,252,0.7);
+  font-size: 11px; color: var(--ink-3);
   font-weight: 400;
 }
-.topbar-meta strong { color: var(--gcba-yellow); font-weight: 600; }
+.topbar-meta strong { color: var(--gcba-navy); font-weight: 700; }
 
-/* ── Nav institucional */
+/* ── Nav institucional (strip navy abajo del header) */
 .nav {
   display: flex; gap: 0; flex-wrap: wrap;
   max-width: 1400px; margin: 0 auto;
   padding: 0 28px;
   background: var(--gcba-navy);
+}
+.nav-wrap {
+  background: var(--gcba-navy);
   border-bottom: 3px solid var(--gcba-yellow);
 }
 .nav button {
   background: transparent;
-  color: rgba(252,252,252,0.65);
+  color: rgba(252,252,252,0.7);
   border: none; border-bottom: 3px solid transparent;
-  padding: 14px 20px;
+  padding: 13px 18px;
   font-family: var(--font-sans);
-  font-size: 13px; font-weight: 500;
+  font-size: 12px; font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   margin-bottom: -3px;
   text-transform: uppercase;
-  font-variant-caps: normal;
 }
 .nav button:hover { color: var(--gcba-offwhite); }
 .nav button.active {
