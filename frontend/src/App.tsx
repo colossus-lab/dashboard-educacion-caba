@@ -7,11 +7,7 @@ import IndicadoresTrayectoria from "./sections/IndicadoresTrayectoria";
 import Comparativa from "./sections/Comparativa";
 import ComparativaInternacional from "./sections/ComparativaInternacional";
 import Vulnerabilidad from "./sections/Vulnerabilidad";
-<<<<<<< chore/remove-sections-programas-mapa-directorio
-=======
-import Directorio from "./sections/Directorio";
 import MobileNav from "./components/MobileNav";
->>>>>>> main
 
 const SECTIONS = [
   { id: "resumen", label: "Resumen ejecutivo" },
