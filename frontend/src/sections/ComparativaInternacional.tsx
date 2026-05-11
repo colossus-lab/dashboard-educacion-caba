@@ -67,25 +67,40 @@ export default function ComparativaInternacional() {
       .filter((c): c is CiudadInternacional => !!c);
   }, [data, selectedCities]);
 
-  // Para el radar normalizamos cada eje a 0-100 sobre el rango del dataset
+  // Para el radar normalizamos cada eje a 0-100 sobre el rango del dataset,
+  // pero guardamos también el valor crudo de cada ciudad por eje para que el
+  // tooltip muestre el dato real con su unidad (evita que la ciudad mínima
+  // del dataset aparezca como "0" — bug histórico cuando, p.ej., Singapur era
+  // el mínimo de "Gasto % PIB" con 2.9% y el radar lo renderizaba como 0).
   const radarData = useMemo(() => {
     if (!data) return [];
     const all = data.ciudades.filter((c) => !isOECD(c));
     const min = (fn: (c: CiudadInternacional) => number) => Math.min(...all.map(fn));
     const max = (fn: (c: CiudadInternacional) => number) => Math.max(...all.map(fn));
-    const norm = (v: number, lo: number, hi: number) => Math.max(0, Math.min(100, ((v - lo) / (hi - lo)) * 100));
-    const axes = [
-      { axis: "PISA promedio", get: (c: CiudadInternacional) => c.pisa_2022.promedio },
-      { axis: "Secundario completo", get: (c: CiudadInternacional) => c.attainment_25_64.secundario_completo_pct },
-      { axis: "Superior completo", get: (c: CiudadInternacional) => c.attainment_25_64.superior_completo_pct },
-      { axis: "Escol. secundaria", get: (c: CiudadInternacional) => c.tasa_neta_escolarizacion.secundaria },
-      { axis: "Escol. superior", get: (c: CiudadInternacional) => c.tasa_neta_escolarizacion.superior },
-      { axis: "Gasto % PIB", get: (c: CiudadInternacional) => c.gasto_publico_educacion_pct_pib },
+    const norm = (v: number, lo: number, hi: number) =>
+      hi === lo ? 50 : Math.max(0, Math.min(100, ((v - lo) / (hi - lo)) * 100));
+    type Axis = {
+      axis: string;
+      get: (c: CiudadInternacional) => number;
+      suffix: string;
+      digits: number;
+    };
+    const axes: Axis[] = [
+      { axis: "PISA promedio", get: (c) => c.pisa_2022.promedio, suffix: "", digits: 0 },
+      { axis: "Secundario completo", get: (c) => c.attainment_25_64.secundario_completo_pct, suffix: "%", digits: 1 },
+      { axis: "Superior completo", get: (c) => c.attainment_25_64.superior_completo_pct, suffix: "%", digits: 1 },
+      { axis: "Escol. secundaria", get: (c) => c.tasa_neta_escolarizacion.secundaria, suffix: "%", digits: 1 },
+      { axis: "Escol. superior", get: (c) => c.tasa_neta_escolarizacion.superior, suffix: "%", digits: 1 },
+      { axis: "Gasto % PIB", get: (c) => c.gasto_publico_educacion_pct_pib, suffix: "%", digits: 1 },
     ];
     return axes.map((a) => {
       const lo = min(a.get), hi = max(a.get);
-      const row: any = { axis: a.axis };
-      radarCities.forEach((c) => { row[c.codigo] = +norm(a.get(c), lo, hi).toFixed(1); });
+      const row: any = { axis: a.axis, suffix: a.suffix, digits: a.digits, raws: {} };
+      radarCities.forEach((c) => {
+        const raw = a.get(c);
+        row[c.codigo] = +norm(raw, lo, hi).toFixed(1);
+        row.raws[c.codigo] = raw;
+      });
       return row;
     });
   }, [data, radarCities]);
@@ -226,11 +241,37 @@ export default function ComparativaInternacional() {
                 strokeWidth={2} />
             ))}
             <Legend />
-            <Tooltip contentStyle={TOOLTIP} formatter={(v: any) => typeof v === "number" ? v.toFixed(0) : v} />
+            <Tooltip
+              contentStyle={TOOLTIP}
+              content={({ active, payload, label }: any) => {
+                if (!active || !payload?.length) return null;
+                const row = payload[0]?.payload as { suffix?: string; digits?: number; raws?: Record<string, number> } | undefined;
+                const suffix = row?.suffix ?? "";
+                const digits = row?.digits ?? 1;
+                const raws = row?.raws ?? {};
+                return (
+                  <div style={{ ...TOOLTIP, padding: 8, minWidth: 180 }}>
+                    <div style={{ fontWeight: 700, color: "#1a2755", marginBottom: 4 }}>{label}</div>
+                    {payload.map((p: any) => {
+                      const code = p.dataKey as string;
+                      const raw = raws[code];
+                      const display = typeof raw === "number" ? `${raw.toFixed(digits)}${suffix}` : "—";
+                      return (
+                        <div key={code} style={{ display: "flex", justifyContent: "space-between", gap: 12, fontSize: 11.5, color: "#34405c" }}>
+                          <span style={{ color: p.color, fontWeight: 600 }}>{p.name}</span>
+                          <span style={{ fontVariantNumeric: "tabular-nums" }}>{display}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              }}
+            />
           </RadarChart>
         </ResponsiveContainer>
         <p className="section-desc" style={{ marginTop: 8 }}>
-          Cada eje normalizado al rango (0 = peor del set, 100 = mejor). Mostrá hasta 5 ciudades simultáneas para comparar perfiles.
+          El plot está <b>normalizado al rango del dataset</b> (0 = peor del set, 100 = mejor) para hacer comparables ejes con escalas
+          muy distintas (PISA 350-600 vs Gasto 2.9-6.9%). El tooltip muestra los <b>valores reales con su unidad</b>. Mostrá hasta 5 ciudades simultáneas para comparar perfiles.
         </p>
       </div>
 
