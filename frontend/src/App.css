@@ -293,6 +293,27 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
+.map-container--vulnerabilidad {
+  height: 720px;
+}
+
+/* Vulnerabilidad section grid: map + ranking sidebar */
+.vulnerabilidad-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .vulnerabilidad-layout { grid-template-columns: 1fr 280px; }
+}
+@media (max-width: 768px) {
+  .vulnerabilidad-layout { grid-template-columns: 1fr; gap: 12px; }
+  .map-container--vulnerabilidad { height: 420px !important; }
+  /* Ranking sidebar caps its height under the map */
+  .vulnerabilidad-layout > aside .card > div[style*="max-height"] {
+    max-height: 360px;
+  }
+}
 
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--ink-3); }
 .legend-item { display: flex; align-items: center; gap: 6px; }
@@ -520,4 +541,311 @@ body {
 .pagination button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE NAV (hamburger drawer) — visible only ≤ 768px
+   ════════════════════════════════════════════════════════════ */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.nav-toggle__bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--gcba-navy);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle__bar--1.open { transform: translateY(6px) rotate(45deg); }
+.nav-toggle__bar--2.open { opacity: 0; }
+.nav-toggle__bar--3.open { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 36, 43, 0.45);
+  z-index: 200;
+  animation: mobileFadeIn 0.16s ease;
+}
+@keyframes mobileFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.mobile-nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(82vw, 320px);
+  background: var(--surface);
+  border-left: 4px solid var(--gcba-yellow);
+  z-index: 201;
+  box-shadow: -4px 0 24px rgba(12, 36, 43, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.22s ease;
+  flex-direction: column;
+}
+.mobile-nav-drawer.open { transform: translateX(0); }
+.mobile-nav-drawer__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--gcba-navy);
+  color: var(--gcba-offwhite);
+  border-bottom: 3px solid var(--gcba-yellow);
+}
+.mobile-nav-drawer__title {
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gcba-yellow);
+}
+.mobile-nav-drawer__close {
+  background: transparent;
+  border: none;
+  color: var(--gcba-offwhite);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.mobile-nav-drawer__list {
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+}
+.mobile-nav-drawer__item {
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  padding: 16px 18px;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background 0.12s, border-left-color 0.12s;
+}
+.mobile-nav-drawer__item:hover {
+  background: var(--surface-2);
+}
+.mobile-nav-drawer__item.active {
+  background: rgba(255, 204, 0, 0.10);
+  border-left-color: var(--gcba-yellow);
+  color: var(--gcba-navy);
+}
+
+/* ════════════════════════════════════════════════════════════
+   DATA TABLE (responsive table → cards)
+   Default state matches desktop. Mobile rules below in @media block.
+   ════════════════════════════════════════════════════════════ */
+.data-table__caption { margin-bottom: 12px; font-size: 13px; color: var(--ink-3); }
+.data-table__mobile { display: none; }
+.data-table__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gcba-navy);
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.data-table__card-head {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--gcba-navy);
+  margin-bottom: 2px;
+  letter-spacing: -0.005em;
+}
+.data-table__card-sub {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.data-table__card-list { margin: 0; padding: 0; }
+.data-table__card-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 12.5px;
+}
+.data-table__card-row:last-child { border-bottom: none; }
+.data-table__card-row dt {
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 10.5px;
+  font-weight: 600;
+  margin: 0;
+}
+.data-table__card-row dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+}
+.data-table__card-row dd.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREAKPOINT ≤ 1024px (tablet) — minor density adjustments
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .topbar-inner { padding: 14px 20px; }
+  .nav { padding: 0 20px; }
+  .main { padding: 24px 20px; }
+  .kpi-row { padding: 18px 20px; }
+  .hero { padding: 36px 32px; }
+  .hero-title { font-size: 36px; }
+  .section-title { font-size: 28px; }
+  .card-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREAKPOINT ≤ 768px (mobile + small tablet portrait)
+   Major layout shifts: hamburger nav, KPI carousel, single-col grid,
+   smaller hero, condensed map. Tables flip to card stacks.
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Topbar collapses cleanly: meta hidden on the smallest screens */
+  .topbar-inner {
+    padding: 12px 14px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  .brand { gap: 10px; min-width: 0; }
+  .brand-logo-img { height: 40px; }
+  .brand-divider { height: 30px; }
+  .brand-title { font-size: 16px; }
+  .brand-eyebrow { font-size: 10px; letter-spacing: 0.10em; }
+  .topbar-meta { display: none; }
+
+  /* Hide the inline tab strip; show the hamburger toggle instead */
+  .nav-wrap { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-nav-backdrop { display: block; }
+  .mobile-nav-drawer { display: flex; }
+
+  /* Main padding */
+  .main { padding: 16px 12px; }
+
+  /* Section heads */
+  .section-title { font-size: 22px; margin-bottom: 8px; }
+  .section-desc { font-size: 13.5px; margin-bottom: 16px; }
+
+  /* Cards */
+  .card { padding: 14px; margin-bottom: 12px; }
+  .card h3 { font-size: 14px; margin-bottom: 12px; }
+  .card-grid { grid-template-columns: 1fr; gap: 12px; }
+  .insights-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* KPI rows become a horizontal scroll-snap carousel.
+     Each kpi card takes ~78% viewport width so the next peeks visually. */
+  .kpi-row {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 12px 12px 6px;
+    gap: 8px;
+    margin-left: -12px;
+    margin-right: -12px;
+    /* Hide scrollbar while keeping scrollable behavior */
+    scrollbar-width: none;
+  }
+  .kpi-row::-webkit-scrollbar { display: none; }
+  .kpi {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+  }
+  .kpi-value { font-size: 24px; }
+  .kpi-label { font-size: 10px; }
+  .kpi-sub { font-size: 11px; }
+
+  /* Hero */
+  .hero {
+    padding: 26px 20px;
+    margin-bottom: 18px;
+  }
+  .hero-title { font-size: 26px; line-height: 1.1; }
+  .hero-subtitle { font-size: 14px; }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 10px; }
+  .hero::after { width: 120px; height: 120px; right: -40px; bottom: -40px; }
+
+  /* Filters: pills go full width, search input fills its row */
+  .filters {
+    padding: 12px;
+    gap: 10px;
+  }
+  .filters label { flex: 1 1 calc(50% - 5px); min-width: 0; }
+  .filters select,
+  .filters input,
+  .filters input[type="search"] {
+    min-width: 0;
+    width: 100%;
+  }
+  .filters input[type="search"] {
+    /* Search bar full row */
+  }
+
+  /* Maps: 600 px → 380 px, ranking sidebar stacks below map */
+  .map-container { height: 380px !important; }
+
+  /* Tables → cards */
+  .data-table__desktop { display: none; }
+  .data-table__mobile { display: block; }
+
+  /* Charts: ensure Recharts ResponsiveContainer doesn't collapse */
+  .recharts-responsive-container { min-height: 200px; }
+  .recharts-text { font-size: 10px !important; }
+  .recharts-cartesian-axis-tick-value { font-size: 10px !important; }
+  .recharts-legend-item-text { font-size: 11px !important; }
+
+  /* Generic table wrappers (legacy tables in cards) */
+  .card > div[style*="overflowX"],
+  .card > div[style*="overflow-x"] {
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREAKPOINT ≤ 480px (mobile, narrowest)
+   Last-mile tightening for iPhone-SE class viewports.
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .brand-text { display: none; }
+  .topbar-band { height: 4px; }
+  .section-title { font-size: 19px; }
+  .hero-title { font-size: 22px; }
+  .hero { padding: 20px 16px; }
+  .kpi-value { font-size: 20px; }
+  .kpi { flex-basis: 84%; }
+  .card { padding: 12px; }
+  .card h3 { font-size: 13px; }
+  .insight-headline { font-size: 14px; }
+  .insight-metric { font-size: 20px; }
 }

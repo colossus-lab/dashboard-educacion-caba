@@ -2,30 +2,26 @@ import { useState } from "react";
 import "./App.css";
 import KpiHeader from "./sections/KpiHeader";
 import ResumenEjecutivo from "./sections/ResumenEjecutivo";
-import MapaTerritorial from "./sections/MapaTerritorial";
 import SeriesTemporales from "./sections/SeriesTemporales";
 import IndicadoresTrayectoria from "./sections/IndicadoresTrayectoria";
-import ProgramasCobertura from "./sections/ProgramasCobertura";
 import Comparativa from "./sections/Comparativa";
 import ComparativaInternacional from "./sections/ComparativaInternacional";
 import Vulnerabilidad from "./sections/Vulnerabilidad";
-import Directorio from "./sections/Directorio";
+import MobileNav from "./components/MobileNav";
 
 const SECTIONS = [
   { id: "resumen", label: "Resumen ejecutivo" },
-  { id: "mapa", label: "Mapa territorial" },
   { id: "vulnerabilidad", label: "Vulnerabilidad social" },
   { id: "series", label: "Series históricas" },
   { id: "indicadores", label: "Indicadores" },
-  { id: "programas", label: "Programas y cobertura" },
   { id: "comparativa", label: "Comparativa nacional" },
   { id: "internacional", label: "Comparativa internacional" },
-  { id: "directorio", label: "Directorio" },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]["id"];
 
 export default function App() {
   const [section, setSection] = useState<SectionId>("resumen");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
     <div className="app">
@@ -44,6 +40,13 @@ export default function App() {
             <span>Última actualización: <strong>enero 2026</strong></span>
             <span>Padrón · Anuarios 2017-2023 · Indicadores 2012-2023</span>
           </div>
+          <MobileNav
+            sections={SECTIONS}
+            current={section}
+            onSelect={setSection}
+            open={mobileNavOpen}
+            setOpen={setMobileNavOpen}
+          />
         </div>
       </header>
       <div className="nav-wrap">
@@ -64,14 +67,11 @@ export default function App() {
 
       <main className="main">
         {section === "resumen" && <ResumenEjecutivo />}
-        {section === "mapa" && <MapaTerritorial />}
         {section === "vulnerabilidad" && <Vulnerabilidad />}
         {section === "series" && <SeriesTemporales />}
         {section === "indicadores" && <IndicadoresTrayectoria />}
-        {section === "programas" && <ProgramasCobertura />}
         {section === "comparativa" && <Comparativa />}
         {section === "internacional" && <ComparativaInternacional />}
-        {section === "directorio" && <Directorio />}
       </main>
 
       <div className="footer-band" />
