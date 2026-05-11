@@ -4,6 +4,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from "recharts";
 import { usePadronJurisdiccional, useIndicadores } from "../dataLoader";
+import { useChartHeight } from "../lib/useChartHeight";
 
 const TOOLTIP = { backgroundColor: "#ffffff", border: "1px solid #d5cfbc", borderRadius: 6 };
 const isCABA = (j: string) => /ciudad.*buenos\s*aires/i.test(j);
@@ -11,6 +12,8 @@ const isCABA = (j: string) => /ciudad.*buenos\s*aires/i.test(j);
 export default function Comparativa() {
   const { data: padron, loading: lp } = usePadronJurisdiccional();
   const { data: ind, loading: li } = useIndicadores();
+  const jurisChartH = useChartHeight(520, 420);
+  const cabaVsNacionH = useChartHeight(320);
 
   const cabaRank = useMemo(() => {
     if (!padron) return null;
@@ -83,7 +86,7 @@ export default function Comparativa() {
 
       <div className="card">
         <h3>Cantidad de establecimientos por jurisdicción</h3>
-        <ResponsiveContainer width="100%" height={520}>
+        <ResponsiveContainer width="100%" height={jurisChartH}>
           <BarChart data={establecimientosData} layout="vertical" margin={{ left: 80 }}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis type="number" stroke="#6b7791" tickFormatter={(v) => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v} />
@@ -103,7 +106,7 @@ export default function Comparativa() {
 
       <div className="card">
         <h3>% Estatal por jurisdicción</h3>
-        <ResponsiveContainer width="100%" height={520}>
+        <ResponsiveContainer width="100%" height={jurisChartH}>
           <BarChart data={pctEstatalData} layout="vertical" margin={{ left: 80 }}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis type="number" stroke="#6b7791" domain={[0, 100]} unit="%" />
@@ -123,7 +126,7 @@ export default function Comparativa() {
 
       <div className="card">
         <h3>Indicadores de trayectoria — CABA vs Total Nación (último año disponible)</h3>
-        <ResponsiveContainer width="100%" height={320}>
+        <ResponsiveContainer width="100%" height={cabaVsNacionH}>
           <BarChart data={cabaVsNacionData}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis dataKey="indicador" stroke="#6b7791" />

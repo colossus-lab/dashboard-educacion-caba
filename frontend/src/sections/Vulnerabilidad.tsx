@@ -311,7 +311,7 @@ export default function Vulnerabilidad() {
         }}>Limpiar</button>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: 16, marginTop: 8 }}>
+      <div className="vulnerabilidad-layout" style={{ marginTop: 8 }}>
         {/* Mapa */}
         {view === "3d" && radiosGeo && censo ? (
           <VulnerabilidadMap3D
@@ -325,7 +325,7 @@ export default function Vulnerabilidad() {
             setSelectedRadio={setSelectedRadio}
           />
         ) : (
-        <div ref={wrapperRef} style={{ height: 720, position: "relative" }} className="map-container">
+        <div ref={wrapperRef} style={{ position: "relative" }} className="map-container map-container--vulnerabilidad">
           <Map
             ref={mapRef}
             initialViewState={{ longitude: -58.4173, latitude: -34.6118, zoom: 11.6 }}

@@ -10,6 +10,7 @@ import Comparativa from "./sections/Comparativa";
 import ComparativaInternacional from "./sections/ComparativaInternacional";
 import Vulnerabilidad from "./sections/Vulnerabilidad";
 import Directorio from "./sections/Directorio";
+import MobileNav from "./components/MobileNav";
 
 const SECTIONS = [
   { id: "resumen", label: "Resumen ejecutivo" },
@@ -26,6 +27,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 
 export default function App() {
   const [section, setSection] = useState<SectionId>("resumen");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
     <div className="app">
@@ -44,6 +46,13 @@ export default function App() {
             <span>Última actualización: <strong>enero 2026</strong></span>
             <span>Padrón · Anuarios 2017-2023 · Indicadores 2012-2023</span>
           </div>
+          <MobileNav
+            sections={SECTIONS}
+            current={section}
+            onSelect={setSection}
+            open={mobileNavOpen}
+            setOpen={setMobileNavOpen}
+          />
         </div>
       </header>
       <div className="nav-wrap">
