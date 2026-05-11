@@ -10,6 +10,7 @@ import { useRadiosCenso, useRadiosGeo, useSchoolsEnriched } from "../dataLoader"
 import { buildChoroplethScale } from "../lib/colorScale";
 import { RADIO_METRICS, type RadioMetric, type SchoolEnriched } from "../lib/vulnerabilidadTypes";
 import VulnerabilidadMap3D from "./VulnerabilidadMap3D";
+import HistogramaVulnerabilidad from "./HistogramaVulnerabilidad";
 
 const MAP_STYLE = "https://tiles.openfreemap.org/styles/positron";
 const CABA_BOUNDS: [[number, number], [number, number]] = [[-58.55, -34.72], [-58.32, -34.52]];
@@ -239,6 +240,9 @@ export default function Vulnerabilidad() {
         </div>
       </div>
 
+      {/* Histograma comparativo CABA vs GBA-24 */}
+      <HistogramaVulnerabilidad />
+
       {/* Filtros */}
       <div className="filters">
         <label>
@@ -307,7 +311,7 @@ export default function Vulnerabilidad() {
         }}>Limpiar</button>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: 16, marginTop: 8 }}>
+      <div className="vulnerabilidad-layout" style={{ marginTop: 8 }}>
         {/* Mapa */}
         {view === "3d" && radiosGeo && censo ? (
           <VulnerabilidadMap3D
@@ -321,7 +325,7 @@ export default function Vulnerabilidad() {
             setSelectedRadio={setSelectedRadio}
           />
         ) : (
-        <div ref={wrapperRef} style={{ height: 720, position: "relative" }} className="map-container">
+        <div ref={wrapperRef} style={{ position: "relative" }} className="map-container map-container--vulnerabilidad">
           <Map
             ref={mapRef}
             initialViewState={{ longitude: -58.4173, latitude: -34.6118, zoom: 11.6 }}

@@ -4,6 +4,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine, ReferenceArea,
 } from "recharts";
 import { useHistoricos, useMatricula, useBoleto, useAsistencia, useAnuarios, useForecast } from "../dataLoader";
+import { useChartHeight } from "../lib/useChartHeight";
 
 const TOOLTIP = { backgroundColor: "#ffffff", border: "1px solid #d5cfbc", borderRadius: 6 };
 
@@ -14,6 +15,9 @@ export default function SeriesTemporales() {
   const { data: asistencia } = useAsistencia();
   const { data: anuarios } = useAnuarios();
   const { data: forecast } = useForecast();
+  const tallH = useChartHeight(320);
+  const medH = useChartHeight(280);
+  const shortH = useChartHeight(260);
 
   const matriculaHistorica = useMemo(() => {
     if (!anuarios) return [];
@@ -101,7 +105,7 @@ export default function SeriesTemporales() {
 
       <div className="card">
         <h3>Matrícula CABA — Educación Común 2017-2023 (por nivel)</h3>
-        <ResponsiveContainer width="100%" height={320}>
+        <ResponsiveContainer width="100%" height={tallH}>
           <AreaChart data={matriculaHistorica}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis dataKey="anio" stroke="#6b7791" />
@@ -122,7 +126,7 @@ export default function SeriesTemporales() {
       <div className="card-grid">
         <div className="card">
           <h3>% Estatal sobre matrícula total CABA — Evolución 2017-2023</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={shortH}>
             <LineChart data={matriculaPctEstatal}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="anio" stroke="#6b7791" />
@@ -137,7 +141,7 @@ export default function SeriesTemporales() {
         </div>
         <div className="card">
           <h3>Matrícula común 2024 por nivel y sector (relevamiento CABA)</h3>
-          <ResponsiveContainer width="100%" height={280}>
+          <ResponsiveContainer width="100%" height={medH}>
             <BarChart data={matriculaPorNivel}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="nivel" stroke="#6b7791" />
@@ -152,7 +156,7 @@ export default function SeriesTemporales() {
 
         <div className="card">
           <h3>Matrícula 2024 por modalidad (total)</h3>
-          <ResponsiveContainer width="100%" height={280}>
+          <ResponsiveContainer width="100%" height={medH}>
             <BarChart data={matriculaModalidad} layout="vertical">
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis type="number" stroke="#6b7791" tickFormatter={(v) => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v} />
@@ -168,7 +172,7 @@ export default function SeriesTemporales() {
 
       <div className="card">
         <h3>Tasa neta de escolarización CABA — 2010-2017 (por nivel y sexo)</h3>
-        <ResponsiveContainer width="100%" height={320}>
+        <ResponsiveContainer width="100%" height={tallH}>
           <LineChart data={escolarizacionData}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis dataKey="anio" stroke="#6b7791" />
@@ -188,7 +192,7 @@ export default function SeriesTemporales() {
       <div className="card-grid">
         <div className="card">
           <h3>Promedio de años de estudio CABA (2003-2019)</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={shortH}>
             <LineChart data={promAniosData}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="anio" stroke="#6b7791" />
@@ -206,7 +210,7 @@ export default function SeriesTemporales() {
 
         <div className="card">
           <h3>Beneficiarios Boleto Estudiantil 2024 — por nivel</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={shortH}>
             <BarChart data={boleto?.por_nivel ?? []}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="nivel" stroke="#6b7791" />
@@ -224,7 +228,7 @@ export default function SeriesTemporales() {
       <div className="card-grid">
         <div className="card">
           <h3>Esperanza de vida escolar CABA (1980-2010)</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={shortH}>
             <LineChart data={espVidaData}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="anio" stroke="#6b7791" />
@@ -239,7 +243,7 @@ export default function SeriesTemporales() {
 
         <div className="card">
           <h3>Brecha de analfabetismo CABA (1960-2010)</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={shortH}>
             <LineChart data={hist?.brecha_analfabetismo}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="anio" stroke="#6b7791" />
@@ -280,7 +284,7 @@ export default function SeriesTemporales() {
               return (
                 <div className="card" key={nivel}>
                   <h3>{nivel} · proyección a 2030</h3>
-                  <ResponsiveContainer width="100%" height={260}>
+                  <ResponsiveContainer width="100%" height={shortH}>
                     <ComposedChart data={chartData}>
                       <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
                       <XAxis dataKey="anio" stroke="#6b7791" />

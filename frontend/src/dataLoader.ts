@@ -11,6 +11,7 @@ import type {
   PadronJurisData,
   CiudadesInternacionalData,
   ForecastData,
+  HistogramaVulnerabilidadData,
 } from "./types";
 
 const BASE = `${import.meta.env.BASE_URL}data`;
@@ -64,3 +65,4 @@ import type { RadiosData } from "./lib/vulnerabilidadTypes";
 export const useRadiosCenso = () => useFetch<RadiosData>(`${BASE}/caba_radios_censo.json`);
 export const useRadiosGeo = () => useFetch<GeoJSON.FeatureCollection>(`${BASE}/radios_caba.geojson`);
 export const useSchoolsEnriched = () => useFetch<GeoJSON.FeatureCollection>(`${BASE}/schools_caba_enriched.geojson`);
+export const useHistogramaVulnerabilidad = () => useFetch<HistogramaVulnerabilidadData>(`${BASE}/histograma_vulnerabilidad.json`);

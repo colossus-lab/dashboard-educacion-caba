@@ -6,6 +6,8 @@ import {
 } from "recharts";
 import { useCiudadesInternacional } from "../dataLoader";
 import type { CiudadInternacional } from "../types";
+import DataTable from "../components/DataTable";
+import { useChartHeight } from "../lib/useChartHeight";
 
 const TOOLTIP = { backgroundColor: "#ffffff", border: "1px solid #d5cfbc", borderRadius: 4, fontSize: 12 };
 const isCABA = (c: CiudadInternacional) => c.codigo === "CABA";
@@ -26,6 +28,10 @@ const fmt = (n: number | undefined | null, suffix = "") =>
 export default function ComparativaInternacional() {
   const { data, loading } = useCiudadesInternacional();
   const [selectedCities, setSelectedCities] = useState<string[]>(["CABA", "MAD", "SCL", "TYO"]);
+  const rankingChartH = useChartHeight(460);
+  const scatterChartH = useChartHeight(400);
+  const radarChartH = useChartHeight(420);
+  const detailChartH = useChartHeight(320);
 
   const ranking = useMemo(() => {
     if (!data) return [];
@@ -124,7 +130,7 @@ export default function ComparativaInternacional() {
       {/* Ranking PISA */}
       <div className="card">
         <h3>Ranking PISA 2022 — Promedio Mat + Lec + Ciencias</h3>
-        <ResponsiveContainer width="100%" height={460}>
+        <ResponsiveContainer width="100%" height={rankingChartH}>
           <BarChart data={ranking} layout="vertical" margin={{ left: 100 }}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis type="number" stroke="#6b7791" domain={[350, 600]} />
@@ -147,7 +153,7 @@ export default function ComparativaInternacional() {
       {/* Scatter gasto vs desempeño */}
       <div className="card">
         <h3>Gasto público en educación (% PIB) × Rendimiento PISA</h3>
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={scatterChartH}>
           <ScatterChart margin={{ top: 20, right: 40, bottom: 30, left: 10 }}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis type="number" dataKey="gasto" stroke="#6b7791" domain={[2.5, 7.5]}
@@ -205,7 +211,7 @@ export default function ComparativaInternacional() {
             Máx. 5 ciudades · {selectedCities.length}/5 seleccionadas
           </span>
         </div>
-        <ResponsiveContainer width="100%" height={420}>
+        <ResponsiveContainer width="100%" height={radarChartH}>
           <RadarChart data={radarData}>
             <PolarGrid stroke="#e3dfd2" />
             <PolarAngleAxis dataKey="axis" tick={{ fontSize: 11, fill: "#34405c" }} />
@@ -235,7 +241,7 @@ export default function ComparativaInternacional() {
         <PisaArea title="PISA Ciencias" data={ranking} field="ciencias" />
         <div className="card">
           <h3>% Educación superior completa (25-64 años)</h3>
-          <ResponsiveContainer width="100%" height={320}>
+          <ResponsiveContainer width="100%" height={detailChartH}>
             <BarChart data={data.ciudades.filter((c) => !isOECD(c)).slice().sort((a, b) => b.attainment_25_64.superior_completo_pct - a.attainment_25_64.superior_completo_pct)} layout="vertical" margin={{ left: 100 }}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis type="number" stroke="#6b7791" domain={[0, 80]} unit="%" />
@@ -251,43 +257,36 @@ export default function ComparativaInternacional() {
         </div>
       </div>
 
-      {/* Tabla completa */}
-      <div className="card" style={{ padding: 0 }}>
-        <h3 style={{ padding: "16px 22px 0", margin: 0 }}>Tabla completa</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Ciudad / País</th>
-                <th>Región</th>
-                <th className="num">PISA Mat</th>
-                <th className="num">PISA Lec</th>
-                <th className="num">PISA Cie</th>
-                <th className="num">Sec. compl. %</th>
-                <th className="num">Sup. compl. %</th>
-                <th className="num">Esc. Sec %</th>
-                <th className="num">Esc. Sup %</th>
-                <th className="num">Gasto % PIB</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.ciudades.map((c) => (
-                <tr key={c.codigo} style={isCABA(c) ? { background: "rgba(212,160,23,0.12)", fontWeight: 700 } : undefined}>
-                  <td>{c.ciudad}{c.es_subnacional && <span style={{ fontSize: 9.5, color: "#6b7791", marginLeft: 6 }}>(sub-nacional)</span>}</td>
-                  <td><span className="tag" style={{ background: `${REGION_COLORS[c.region]}22`, color: REGION_COLORS[c.region] }}>{c.region}</span></td>
-                  <td className="num">{c.pisa_2022.matematica}</td>
-                  <td className="num">{c.pisa_2022.lectura}</td>
-                  <td className="num">{c.pisa_2022.ciencias}</td>
-                  <td className="num">{c.attainment_25_64.secundario_completo_pct.toFixed(1)}</td>
-                  <td className="num">{c.attainment_25_64.superior_completo_pct.toFixed(1)}</td>
-                  <td className="num">{c.tasa_neta_escolarizacion.secundaria.toFixed(1)}</td>
-                  <td className="num">{c.tasa_neta_escolarizacion.superior.toFixed(1)}</td>
-                  <td className="num">{c.gasto_publico_educacion_pct_pib.toFixed(1)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      {/* Tabla completa — responsive: tabla en desktop, cards en mobile */}
+      <div className="card">
+        <h3>Tabla completa</h3>
+        <DataTable<CiudadInternacional>
+          rows={data.ciudades}
+          rowKey={(c) => c.codigo}
+          rowStyle={(c) => isCABA(c) ? { background: "rgba(212,160,23,0.12)", fontWeight: 700 } : undefined}
+          columns={[
+            {
+              key: "ciudad",
+              label: "Ciudad / País",
+              cardHeader: true,
+              render: (c) => <>{c.ciudad}{c.es_subnacional && <span style={{ fontSize: 9.5, color: "#6b7791", marginLeft: 6 }}>(sub-nacional)</span>}</>,
+            },
+            {
+              key: "region",
+              label: "Región",
+              cardSubheader: true,
+              render: (c) => <span className="tag" style={{ background: `${REGION_COLORS[c.region]}22`, color: REGION_COLORS[c.region] }}>{c.region}</span>,
+            },
+            { key: "pisa_mat", label: "PISA Mat", numeric: true, render: (c) => c.pisa_2022.matematica },
+            { key: "pisa_lec", label: "PISA Lec", numeric: true, render: (c) => c.pisa_2022.lectura },
+            { key: "pisa_cie", label: "PISA Cie", numeric: true, render: (c) => c.pisa_2022.ciencias },
+            { key: "sec_compl", label: "Sec. compl. %", numeric: true, render: (c) => c.attainment_25_64.secundario_completo_pct.toFixed(1) },
+            { key: "sup_compl", label: "Sup. compl. %", numeric: true, render: (c) => c.attainment_25_64.superior_completo_pct.toFixed(1) },
+            { key: "esc_sec", label: "Esc. Sec %", numeric: true, render: (c) => c.tasa_neta_escolarizacion.secundaria.toFixed(1) },
+            { key: "esc_sup", label: "Esc. Sup %", numeric: true, render: (c) => c.tasa_neta_escolarizacion.superior.toFixed(1) },
+            { key: "gasto", label: "Gasto % PIB", numeric: true, render: (c) => c.gasto_publico_educacion_pct_pib.toFixed(1) },
+          ]}
+        />
       </div>
 
       <p className="section-desc" style={{ marginTop: 16 }}>

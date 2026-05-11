@@ -5,6 +5,7 @@ import {
 } from "recharts";
 import { useIndicadores } from "../dataLoader";
 import type { IndicadorAnual } from "../types";
+import { useChartHeight } from "../lib/useChartHeight";
 
 const TOOLTIP = { backgroundColor: "#ffffff", border: "1px solid #d5cfbc", borderRadius: 6 };
 
@@ -22,6 +23,8 @@ function buildSerie(rows: IndicadorAnual[], key: "primaria" | "secundaria") {
 
 export default function IndicadoresTrayectoria() {
   const { data, loading } = useIndicadores();
+  const heatmapH = useChartHeight(280);
+  const lineH = useChartHeight(300);
 
   const repPrim = useMemo(() => (data ? buildSerie(data.repitencia, "primaria") : []), [data]);
   const repSec = useMemo(() => (data ? buildSerie(data.repitencia, "secundaria") : []), [data]);
@@ -65,7 +68,7 @@ export default function IndicadoresTrayectoria() {
 
       <div className="card">
         <h3>Repitencia por grado de Primaria — CABA, último año disponible ({lastYear})</h3>
-        <ResponsiveContainer width="100%" height={280}>
+        <ResponsiveContainer width="100%" height={heatmapH}>
           <BarChart data={repHeatmap}>
             <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
             <XAxis dataKey="grado" stroke="#6b7791" />
@@ -80,8 +83,8 @@ export default function IndicadoresTrayectoria() {
       </div>
 
       <div className="card">
-        <h3>Tasa neta de escolarización CABA por nivel (2011-2022)</h3>
-        <ResponsiveContainer width="100%" height={300}>
+        <h3>Tasa neta de escolarización CABA por nivel (2012-2022)</h3>
+        <ResponsiveContainer width="100%" height={lineH}>
           <LineChart data={
             (() => {
               const grouped: Record<number, any> = {};
