@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "fuente": "INDEC CPV 2022 (radios censales) + Anuarios Min. Educación Nación (síntesis jurisdiccional CABA)",
+    "anio_anuario": 2023,
+    "scope": "15 comunas CABA",
+    "definicion_demanda": "Suma de población que respondió pregunta CONASI (5+ años) por radio. Aproxima upper-bound de población escolarizable.",
+    "definicion_oferta": "Alumnos inscriptos en establecimientos ubicados en la comuna (Anuario 2023, educación común)",
+    "interpretacion_ratio": "ratio > 100% indica que la comuna recibe alumnos de otras comunas (atractora). < 100% indica déficit relativo o residentes que estudian en otras comunas."
+  },
+  "por_comuna": [
+    {
+      "comuna": 1,
+      "poblacion_total": 219673,
+      "poblacion_escolarizable_aprox": 221001,
+      "hogares": 106509,
+      "matricula_total": 62081,
+      "matricula_inicial": 7084,
+      "matricula_primario": 17047,
+      "matricula_secundario": 17973,
+      "matricula_superior": 19977,
+      "ratio_cobertura_pct": 28.09
+    },
+    {
+      "comuna": 2,
+      "poblacion_total": 159809,
+      "poblacion_escolarizable_aprox": 160609,
+      "hogares": 83818,
+      "matricula_total": 35815,
+      "matricula_inicial": 3877,
+      "matricula_primario": 9420,
+      "matricula_secundario": 9153,
+      "matricula_superior": 13365,
+      "ratio_cobertura_pct": 22.3
+    },
+    {
+      "comuna": 3,
+      "poblacion_total": 192108,
+      "poblacion_escolarizable_aprox": 193537,
+      "hogares": 92555,
+      "matricula_total": 69382,
+      "matricula_inicial": 5868,
+      "matricula_primario": 17259,
+      "matricula_secundario": 14165,
+      "matricula_superior": 32090,
+      "ratio_cobertura_pct": 35.85
+    },
+    {
+      "comuna": 4,
+      "poblacion_total": 225297,
+      "poblacion_escolarizable_aprox": 227024,
+      "hogares": 91186,
+      "matricula_total": 56783,
+      "matricula_inicial": 9243,
+      "matricula_primario": 27289,
+      "matricula_secundario": 16501,
+      "matricula_superior": 3750,
+      "ratio_cobertura_pct": 25.01
+    },
+    {
+      "comuna": 5,
+      "poblacion_total": 191257,
+      "poblacion_escolarizable_aprox": 192449,
+      "hogares": 93208,
+      "matricula_total": 38186,
+      "matricula_inicial": 4520,
+      "matricula_primario": 13030,
+      "matricula_secundario": 12639,
+      "matricula_superior": 7997,
+      "ratio_cobertura_pct": 19.84
+    },
+    {
+      "comuna": 6,
+      "poblacion_total": 200688,
+      "poblacion_escolarizable_aprox": 201764,
+      "hogares": 95464,
+      "matricula_total": 41929,
+      "matricula_inicial": 5650,
+      "matricula_primario": 15086,
+      "matricula_secundario": 13992,
+      "matricula_superior": 7201,
+      "ratio_cobertura_pct": 20.78
+    },
+    {
+      "comuna": 7,
+      "poblacion_total": 211705,
+      "poblacion_escolarizable_aprox": 213262,
+      "hogares": 90970,
+      "matricula_total": 41930,
+      "matricula_inicial": 6644,
+      "matricula_primario": 19132,
+      "matricula_secundario": 10982,
+      "matricula_superior": 5172,
+      "ratio_cobertura_pct": 19.66
+    },
+    {
+      "comuna": 8,
+      "poblacion_total": 202310,
+      "poblacion_escolarizable_aprox": 203888,
+      "hogares": 70622,
+      "matricula_total": 58523,
+      "matricula_inicial": 10568,
+      "matricula_primario": 28548,
+      "matricula_secundario": 15963,
+      "matricula_superior": 3444,
+      "ratio_cobertura_pct": 28.7
+    },
+    {
+      "comuna": 9,
+      "poblacion_total": 166697,
+      "poblacion_escolarizable_aprox": 167908,
+      "hogares": 66753,
+      "matricula_total": 48119,
+      "matricula_inicial": 6324,
+      "matricula_primario": 21248,
+      "matricula_secundario": 16122,
+      "matricula_superior": 4425,
+      "ratio_cobertura_pct": 28.66
+    },
+    {
+      "comuna": 10,
+      "poblacion_total": 170663,
+      "poblacion_escolarizable_aprox": 171896,
+      "hogares": 73964,
+      "matricula_total": 35623,
+      "matricula_inicial": 5417,
+      "matricula_primario": 16280,
+      "matricula_secundario": 11975,
+      "matricula_superior": 1951,
+      "ratio_cobertura_pct": 20.72
+    },
+    {
+      "comuna": 11,
+      "poblacion_total": 200632,
+      "poblacion_escolarizable_aprox": 201905,
+      "hogares": 87910,
+      "matricula_total": 37188,
+      "matricula_inicial": 6105,
+      "matricula_primario": 18440,
+      "matricula_secundario": 11541,
+      "matricula_superior": 1102,
+      "ratio_cobertura_pct": 18.42
+    },
+    {
+      "comuna": 12,
+      "poblacion_total": 234028,
+      "poblacion_escolarizable_aprox": 235364,
+      "hogares": 108085,
+      "matricula_total": 38586,
+      "matricula_inicial": 7488,
+      "matricula_primario": 18169,
+      "matricula_secundario": 11614,
+      "matricula_superior": 1315,
+      "ratio_cobertura_pct": 16.39
+    },
+    {
+      "comuna": 13,
+      "poblacion_total": 260961,
+      "poblacion_escolarizable_aprox": 262330,
+      "hogares": 127241,
+      "matricula_total": 60689,
+      "matricula_inicial": 9026,
+      "matricula_primario": 21740,
+      "matricula_secundario": 20850,
+      "matricula_superior": 9073,
+      "ratio_cobertura_pct": 23.13
+    },
+    {
+      "comuna": 14,
+      "poblacion_total": 245862,
+      "poblacion_escolarizable_aprox": 247252,
+      "hogares": 127733,
+      "matricula_total": 45713,
+      "matricula_inicial": 7804,
+      "matricula_primario": 17301,
+      "matricula_secundario": 11367,
+      "matricula_superior": 9241,
+      "ratio_cobertura_pct": 18.49
+    },
+    {
+      "comuna": 15,
+      "poblacion_total": 194071,
+      "poblacion_escolarizable_aprox": 195265,
+      "hogares": 90717,
+      "matricula_total": 27670,
+      "matricula_inicial": 4261,
+      "matricula_primario": 12307,
+      "matricula_secundario": 7693,
+      "matricula_superior": 3409,
+      "ratio_cobertura_pct": 14.17
+    }
+  ]
+}

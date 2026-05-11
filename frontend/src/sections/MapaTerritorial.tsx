@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, CircleMarker, Tooltip, Popup, LayersControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useComunas, useEstablecimientos, useEstablecimientosSummary, useUniversidades, useOficinasBoleto, useAnuarios } from "../dataLoader";
+import { useComunas, useEstablecimientos, useEstablecimientosSummary, useUniversidades, useOficinasBoleto, useAnuarios, useBrecha } from "../dataLoader";
 import type { Establecimiento } from "../types";
 
 const CABA_CENTER: [number, number] = [-34.6118, -58.4173];
@@ -38,6 +38,7 @@ export default function MapaTerritorial() {
   const { data: universidades } = useUniversidades();
   const { data: oficinasBoleto } = useOficinasBoleto();
   const { data: anuarios } = useAnuarios();
+  const { data: brecha } = useBrecha();
 
   const [sectorFilter, setSectorFilter] = useState<"todos" | "Estatal" | "Privada">("todos");
   const [nivelFilter, setNivelFilter] = useState<string>("todos");
@@ -302,6 +303,50 @@ export default function MapaTerritorial() {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* ─── Brecha oferta-demanda ─── */}
+      {brecha && (
+        <div className="card" style={{ marginTop: 16 }}>
+          <h3>Brecha oferta–demanda educativa por comuna</h3>
+          <p className="section-desc" style={{ marginBottom: 12, marginTop: -4 }}>
+            Ratio matrícula común {brecha.meta.anio_anuario} / población escolarizable censo 2022.
+            Ratios mayores indican comunas <b>atractoras</b> (reciben alumnos de otras zonas).
+            Menores indican <b>déficit relativo</b> o residentes que estudian fuera.
+          </p>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Comuna</th>
+                <th className="num">Pob. escolarizable</th>
+                <th className="num">Matrícula común</th>
+                <th className="num">Ratio cobertura</th>
+                <th>Indicador</th>
+              </tr>
+            </thead>
+            <tbody>
+              {brecha.por_comuna.slice().sort((a, b) => b.ratio_cobertura_pct - a.ratio_cobertura_pct).map((b) => {
+                const ratio = b.ratio_cobertura_pct;
+                const isHigh = ratio > 30;
+                const isLow = ratio < 18;
+                const tag = isHigh ? "Atractora" : isLow ? "Déficit" : "Equilibrio";
+                const tagColor = isHigh ? "var(--good)" : isLow ? "var(--danger)" : "var(--ink-3)";
+                return (
+                  <tr key={b.comuna}>
+                    <td>Comuna {b.comuna}</td>
+                    <td className="num">{b.poblacion_escolarizable_aprox.toLocaleString("es-AR")}</td>
+                    <td className="num">{b.matricula_total.toLocaleString("es-AR")}</td>
+                    <td className="num" style={{ fontWeight: 700, color: tagColor }}>{ratio.toFixed(1)}%</td>
+                    <td><span className="tag" style={{ background: `${tagColor}1f`, color: tagColor }}>{tag}</span></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <p className="section-desc" style={{ fontSize: 11, marginTop: 8 }}>
+            Fuentes: INDEC CPV 2022 (radios censales) + Anuario Min. Educación {brecha.meta.anio_anuario}. {brecha.meta.interpretacion_ratio}
+          </p>
         </div>
       )}
     </div>

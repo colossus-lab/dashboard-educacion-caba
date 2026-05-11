@@ -128,3 +128,81 @@ export interface PadronJurisData {
   total_pais: number;
   por_jurisdiccion: PadronJurisRow[];
 }
+
+export interface CiudadInternacional {
+  ciudad: string;
+  pais: string;
+  codigo: string;
+  region: string;
+  es_subnacional: boolean;
+  pisa_2022: { matematica: number; lectura: number; ciencias: number; promedio: number };
+  attainment_25_64: { secundario_completo_pct: number; superior_completo_pct: number };
+  tasa_neta_escolarizacion: { primaria: number; secundaria: number; superior: number };
+  gasto_publico_educacion_pct_pib: number;
+}
+
+export interface BrechaComunaRow {
+  comuna: number;
+  poblacion_total: number;
+  poblacion_escolarizable_aprox: number;
+  hogares: number;
+  matricula_total: number;
+  matricula_inicial: number;
+  matricula_primario: number;
+  matricula_secundario: number;
+  matricula_superior: number;
+  ratio_cobertura_pct: number;
+}
+
+export interface BrechaData {
+  meta: {
+    fuente: string;
+    anio_anuario: number;
+    scope: string;
+    definicion_demanda: string;
+    definicion_oferta: string;
+    interpretacion_ratio: string;
+  };
+  por_comuna: BrechaComunaRow[];
+}
+
+export interface ForecastPoint {
+  anio: number;
+  actual: number | null;
+  predicted: number | null;
+  lower: number | null;
+  upper: number | null;
+  fitted: number | null;
+}
+
+export interface ForecastNivel {
+  slope_anual: number;
+  intercept: number;
+  r2: number;
+  sigma_residual: number;
+  puntos: ForecastPoint[];
+}
+
+export interface ForecastData {
+  meta: {
+    metodo: string;
+    fuente: string;
+    anios_observados: number[];
+    horizonte: number;
+    caveat: string;
+  };
+  por_nivel: Record<string, ForecastNivel>;
+}
+
+export interface CiudadesInternacionalData {
+  meta: {
+    fuente_principal: string;
+    scope: string;
+    generado: string;
+    caveat_pisa_subnational: string;
+    caveat_attainment: string;
+    caveat_escolarizacion: string;
+    caveat_gasto: string;
+  };
+  ciudades: CiudadInternacional[];
+}

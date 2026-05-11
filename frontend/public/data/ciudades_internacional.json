@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "fuente_principal": "OECD PISA 2022 (volumes I & II), OECD Education at a Glance 2023, UNESCO Institute for Statistics, World Bank EdStats",
+    "scope": "Comparación CABA vs 11 capitales/ciudades-estado del mundo",
+    "generado": "2026-05-10",
+    "caveat_pisa_subnational": "CABA, Córdoba y Mendoza tienen muestras PISA propias. El resto de las ciudades reporta el promedio nacional. Singapur es ciudad-estado (país = ciudad).",
+    "caveat_attainment": "% adultos 25-64 años con educación secundaria/terciaria completa. Fuente: OECD Education at a Glance 2023, valores 2022.",
+    "caveat_escolarizacion": "Tasa neta ajustada de escolarización por nivel (UNESCO UIS, último año disponible 2022).",
+    "caveat_gasto": "Gasto público en educación como % del PIB. Fuente: World Bank EdStats / UNESCO UIS, último año disponible 2020-2022."
+  },
+  "ciudades": [
+    {
+      "ciudad": "Ciudad de Buenos Aires",
+      "pais": "Argentina",
+      "codigo": "CABA",
+      "region": "Sudamérica",
+      "es_subnacional": true,
+      "pisa_2022": { "matematica": 424, "lectura": 449, "ciencias": 451, "promedio": 441 },
+      "attainment_25_64": { "secundario_completo_pct": 78.4, "superior_completo_pct": 36.2 },
+      "tasa_neta_escolarizacion": { "primaria": 98.5, "secundaria": 92.0, "superior": 56.0 },
+      "gasto_publico_educacion_pct_pib": 4.6
+    },
+    {
+      "ciudad": "Madrid",
+      "pais": "España",
+      "codigo": "MAD",
+      "region": "Europa",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 473, "lectura": 474, "ciencias": 485, "promedio": 477 },
+      "attainment_25_64": { "secundario_completo_pct": 62.8, "superior_completo_pct": 41.4 },
+      "tasa_neta_escolarizacion": { "primaria": 99.5, "secundaria": 96.0, "superior": 89.0 },
+      "gasto_publico_educacion_pct_pib": 4.4
+    },
+    {
+      "ciudad": "París",
+      "pais": "Francia",
+      "codigo": "PAR",
+      "region": "Europa",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 474, "lectura": 474, "ciencias": 487, "promedio": 478 },
+      "attainment_25_64": { "secundario_completo_pct": 82.0, "superior_completo_pct": 41.6 },
+      "tasa_neta_escolarizacion": { "primaria": 99.5, "secundaria": 95.0, "superior": 64.0 },
+      "gasto_publico_educacion_pct_pib": 5.4
+    },
+    {
+      "ciudad": "Londres",
+      "pais": "Reino Unido",
+      "codigo": "LON",
+      "region": "Europa",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 489, "lectura": 494, "ciencias": 500, "promedio": 494 },
+      "attainment_25_64": { "secundario_completo_pct": 81.4, "superior_completo_pct": 50.5 },
+      "tasa_neta_escolarizacion": { "primaria": 99.0, "secundaria": 97.0, "superior": 67.0 },
+      "gasto_publico_educacion_pct_pib": 5.2
+    },
+    {
+      "ciudad": "Nueva York",
+      "pais": "Estados Unidos",
+      "codigo": "NYC",
+      "region": "Norteamérica",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 465, "lectura": 504, "ciencias": 499, "promedio": 489 },
+      "attainment_25_64": { "secundario_completo_pct": 91.4, "superior_completo_pct": 50.4 },
+      "tasa_neta_escolarizacion": { "primaria": 95.0, "secundaria": 92.0, "superior": 87.0 },
+      "gasto_publico_educacion_pct_pib": 6.1
+    },
+    {
+      "ciudad": "Tokio",
+      "pais": "Japón",
+      "codigo": "TYO",
+      "region": "Asia",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 536, "lectura": 516, "ciencias": 547, "promedio": 533 },
+      "attainment_25_64": { "secundario_completo_pct": 86.7, "superior_completo_pct": 55.7 },
+      "tasa_neta_escolarizacion": { "primaria": 99.5, "secundaria": 98.5, "superior": 64.0 },
+      "gasto_publico_educacion_pct_pib": 3.4
+    },
+    {
+      "ciudad": "Berlín",
+      "pais": "Alemania",
+      "codigo": "BER",
+      "region": "Europa",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 475, "lectura": 480, "ciencias": 492, "promedio": 482 },
+      "attainment_25_64": { "secundario_completo_pct": 83.7, "superior_completo_pct": 32.2 },
+      "tasa_neta_escolarizacion": { "primaria": 99.0, "secundaria": 95.0, "superior": 71.0 },
+      "gasto_publico_educacion_pct_pib": 4.7
+    },
+    {
+      "ciudad": "Sídney",
+      "pais": "Australia",
+      "codigo": "SYD",
+      "region": "Oceanía",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 487, "lectura": 498, "ciencias": 507, "promedio": 497 },
+      "attainment_25_64": { "secundario_completo_pct": 84.2, "superior_completo_pct": 51.4 },
+      "tasa_neta_escolarizacion": { "primaria": 96.0, "secundaria": 92.0, "superior": 96.0 },
+      "gasto_publico_educacion_pct_pib": 5.2
+    },
+    {
+      "ciudad": "Toronto",
+      "pais": "Canadá",
+      "codigo": "TOR",
+      "region": "Norteamérica",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 497, "lectura": 507, "ciencias": 515, "promedio": 506 },
+      "attainment_25_64": { "secundario_completo_pct": 92.8, "superior_completo_pct": 62.7 },
+      "tasa_neta_escolarizacion": { "primaria": 99.0, "secundaria": 96.0, "superior": 76.0 },
+      "gasto_publico_educacion_pct_pib": 5.2
+    },
+    {
+      "ciudad": "Estocolmo",
+      "pais": "Suecia",
+      "codigo": "STO",
+      "region": "Europa",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 482, "lectura": 487, "ciencias": 494, "promedio": 488 },
+      "attainment_25_64": { "secundario_completo_pct": 84.0, "superior_completo_pct": 51.2 },
+      "tasa_neta_escolarizacion": { "primaria": 99.5, "secundaria": 97.0, "superior": 81.0 },
+      "gasto_publico_educacion_pct_pib": 6.9
+    },
+    {
+      "ciudad": "Santiago",
+      "pais": "Chile",
+      "codigo": "SCL",
+      "region": "Sudamérica",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 412, "lectura": 448, "ciencias": 444, "promedio": 435 },
+      "attainment_25_64": { "secundario_completo_pct": 67.5, "superior_completo_pct": 33.1 },
+      "tasa_neta_escolarizacion": { "primaria": 95.0, "secundaria": 90.0, "superior": 88.0 },
+      "gasto_publico_educacion_pct_pib": 5.4
+    },
+    {
+      "ciudad": "Singapur",
+      "pais": "Singapur",
+      "codigo": "SIN",
+      "region": "Asia",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 575, "lectura": 543, "ciencias": 561, "promedio": 560 },
+      "attainment_25_64": { "secundario_completo_pct": 79.0, "superior_completo_pct": 58.0 },
+      "tasa_neta_escolarizacion": { "primaria": 99.5, "secundaria": 96.0, "superior": 88.0 },
+      "gasto_publico_educacion_pct_pib": 2.9
+    },
+    {
+      "ciudad": "Promedio OECD",
+      "pais": "—",
+      "codigo": "OECD",
+      "region": "Referencia",
+      "es_subnacional": false,
+      "pisa_2022": { "matematica": 472, "lectura": 476, "ciencias": 485, "promedio": 478 },
+      "attainment_25_64": { "secundario_completo_pct": 82.0, "superior_completo_pct": 40.4 },
+      "tasa_neta_escolarizacion": { "primaria": 98.0, "secundaria": 94.0, "superior": 67.0 },
+      "gasto_publico_educacion_pct_pib": 4.9
+    }
+  ]
+}

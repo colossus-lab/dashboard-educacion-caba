@@ -10,6 +10,9 @@ import type {
   AsistenciaData,
   AnuariosData,
   PadronJurisData,
+  CiudadesInternacionalData,
+  BrechaData,
+  ForecastData,
 } from "./types";
 
 const BASE = `${import.meta.env.BASE_URL}data`;
@@ -61,6 +64,9 @@ export const useESI = () => useFetch<ESIData>(`${BASE}/esi.json`);
 export const useAsistencia = () => useFetch<AsistenciaData>(`${BASE}/asistencia_caba.json`);
 export const useAnuarios = () => useFetch<AnuariosData>(`${BASE}/anuarios_caba.json`);
 export const usePadronJurisdiccional = () => useFetch<PadronJurisData>(`${BASE}/padron_jurisdiccional.json`);
+export const useCiudadesInternacional = () => useFetch<CiudadesInternacionalData>(`${BASE}/ciudades_internacional.json`);
+export const useBrecha = () => useFetch<BrechaData>(`${BASE}/brecha_oferta_demanda.json`);
+export const useForecast = () => useFetch<ForecastData>(`${BASE}/forecast_matricula.json`);
 
 import type { RadiosData } from "./lib/vulnerabilidadTypes";
 export const useRadiosCenso = () => useFetch<RadiosData>(`${BASE}/caba_radios_censo.json`);

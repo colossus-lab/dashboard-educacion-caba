@@ -1,0 +1,498 @@
+{
+  "meta": {
+    "metodo": "Regresión lineal OLS por nivel + banda de confianza 95% (1.96×σ×√h)",
+    "fuente": "Anuarios Estadísticos Min. Educación Nación, Capítulo 5 Síntesis Jurisdiccional",
+    "anios_observados": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2022,
+      2023
+    ],
+    "horizonte": 2030,
+    "caveat": "Forecast con n=6 puntos es exploratorio. La incertidumbre crece con el horizonte (banda 95% escalada por √h)."
+  },
+  "por_nivel": {
+    "Inicial": {
+      "slope_anual": -4532.024844720847,
+      "intercept": 9270940.515528658,
+      "r2": 0.8768580511752366,
+      "sigma_residual": 3934.4402731969435,
+      "puntos": [
+        {
+          "anio": 2017,
+          "actual": 124582,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 129846
+        },
+        {
+          "anio": 2018,
+          "actual": 125692,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 125314
+        },
+        {
+          "anio": 2019,
+          "actual": 124932,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 120782
+        },
+        {
+          "anio": 2020,
+          "actual": 121044,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 116250
+        },
+        {
+          "anio": 2021,
+          "actual": null,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 111718
+        },
+        {
+          "anio": 2022,
+          "actual": 105905,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 107186
+        },
+        {
+          "anio": 2023,
+          "actual": 99879,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 102654
+        },
+        {
+          "anio": 2024,
+          "actual": null,
+          "predicted": 98122,
+          "lower": 90411,
+          "upper": 105834,
+          "fitted": null
+        },
+        {
+          "anio": 2025,
+          "actual": null,
+          "predicted": 93590,
+          "lower": 82684,
+          "upper": 104496,
+          "fitted": null
+        },
+        {
+          "anio": 2026,
+          "actual": null,
+          "predicted": 89058,
+          "lower": 75701,
+          "upper": 102415,
+          "fitted": null
+        },
+        {
+          "anio": 2027,
+          "actual": null,
+          "predicted": 84526,
+          "lower": 69103,
+          "upper": 99949,
+          "fitted": null
+        },
+        {
+          "anio": 2028,
+          "actual": null,
+          "predicted": 79994,
+          "lower": 62751,
+          "upper": 97238,
+          "fitted": null
+        },
+        {
+          "anio": 2029,
+          "actual": null,
+          "predicted": 75462,
+          "lower": 56573,
+          "upper": 94351,
+          "fitted": null
+        },
+        {
+          "anio": 2030,
+          "actual": null,
+          "predicted": 70930,
+          "lower": 50527,
+          "upper": 91333,
+          "fitted": null
+        }
+      ]
+    },
+    "Primario": {
+      "slope_anual": -2354.25465838532,
+      "intercept": 5038222.53416195,
+      "r2": 0.7468339497549767,
+      "sigma_residual": 3175.385491343521,
+      "puntos": [
+        {
+          "anio": 2017,
+          "actual": 286408,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 289691
+        },
+        {
+          "anio": 2018,
+          "actual": 286874,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 287337
+        },
+        {
+          "anio": 2019,
+          "actual": 286575,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 284982
+        },
+        {
+          "anio": 2020,
+          "actual": 287737,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 282628
+        },
+        {
+          "anio": 2021,
+          "actual": null,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 280274
+        },
+        {
+          "anio": 2022,
+          "actual": 278233,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 277920
+        },
+        {
+          "anio": 2023,
+          "actual": 272296,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 275565
+        },
+        {
+          "anio": 2024,
+          "actual": null,
+          "predicted": 273211,
+          "lower": 266987,
+          "upper": 279435,
+          "fitted": null
+        },
+        {
+          "anio": 2025,
+          "actual": null,
+          "predicted": 270857,
+          "lower": 262055,
+          "upper": 279659,
+          "fitted": null
+        },
+        {
+          "anio": 2026,
+          "actual": null,
+          "predicted": 268503,
+          "lower": 257723,
+          "upper": 279282,
+          "fitted": null
+        },
+        {
+          "anio": 2027,
+          "actual": null,
+          "predicted": 266148,
+          "lower": 253701,
+          "upper": 278596,
+          "fitted": null
+        },
+        {
+          "anio": 2028,
+          "actual": null,
+          "predicted": 263794,
+          "lower": 249877,
+          "upper": 277711,
+          "fitted": null
+        },
+        {
+          "anio": 2029,
+          "actual": null,
+          "predicted": 261440,
+          "lower": 246195,
+          "upper": 276685,
+          "fitted": null
+        },
+        {
+          "anio": 2030,
+          "actual": null,
+          "predicted": 259086,
+          "lower": 242619,
+          "upper": 275552,
+          "fitted": null
+        }
+      ]
+    },
+    "Secundario": {
+      "slope_anual": 1490.8447204969214,
+      "intercept": -2812151.5279503656,
+      "r2": 0.9104893174737279,
+      "sigma_residual": 1082.8909627783803,
+      "puntos": [
+        {
+          "anio": 2017,
+          "actual": 194032,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 194882
+        },
+        {
+          "anio": 2018,
+          "actual": 196308,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 196373
+        },
+        {
+          "anio": 2019,
+          "actual": 199178,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 197864
+        },
+        {
+          "anio": 2020,
+          "actual": 198991,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 199355
+        },
+        {
+          "anio": 2021,
+          "actual": null,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 200846
+        },
+        {
+          "anio": 2022,
+          "actual": 203599,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 202336
+        },
+        {
+          "anio": 2023,
+          "actual": 202530,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 203827
+        },
+        {
+          "anio": 2024,
+          "actual": null,
+          "predicted": 205318,
+          "lower": 203196,
+          "upper": 207441,
+          "fitted": null
+        },
+        {
+          "anio": 2025,
+          "actual": null,
+          "predicted": 206809,
+          "lower": 203807,
+          "upper": 209811,
+          "fitted": null
+        },
+        {
+          "anio": 2026,
+          "actual": null,
+          "predicted": 208300,
+          "lower": 204624,
+          "upper": 211976,
+          "fitted": null
+        },
+        {
+          "anio": 2027,
+          "actual": null,
+          "predicted": 209791,
+          "lower": 205546,
+          "upper": 214036,
+          "fitted": null
+        },
+        {
+          "anio": 2028,
+          "actual": null,
+          "predicted": 211282,
+          "lower": 206536,
+          "upper": 216028,
+          "fitted": null
+        },
+        {
+          "anio": 2029,
+          "actual": null,
+          "predicted": 212772,
+          "lower": 207573,
+          "upper": 217971,
+          "fitted": null
+        },
+        {
+          "anio": 2030,
+          "actual": null,
+          "predicted": 214263,
+          "lower": 208648,
+          "upper": 219879,
+          "fitted": null
+        }
+      ]
+    },
+    "Superior": {
+      "slope_anual": 2450.2919254659414,
+      "intercept": -4832040.807453625,
+      "r2": 0.93963532342448,
+      "sigma_residual": 1438.7386521937813,
+      "puntos": [
+        {
+          "anio": 2017,
+          "actual": 110666,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 110198
+        },
+        {
+          "anio": 2018,
+          "actual": 112993,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 112648
+        },
+        {
+          "anio": 2019,
+          "actual": 113721,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 115099
+        },
+        {
+          "anio": 2020,
+          "actual": 117062,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 117549
+        },
+        {
+          "anio": 2021,
+          "actual": null,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 119999
+        },
+        {
+          "anio": 2022,
+          "actual": 124889,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 122449
+        },
+        {
+          "anio": 2023,
+          "actual": 123512,
+          "predicted": null,
+          "lower": null,
+          "upper": null,
+          "fitted": 124900
+        },
+        {
+          "anio": 2024,
+          "actual": null,
+          "predicted": 127350,
+          "lower": 124530,
+          "upper": 130170,
+          "fitted": null
+        },
+        {
+          "anio": 2025,
+          "actual": null,
+          "predicted": 129800,
+          "lower": 125812,
+          "upper": 133788,
+          "fitted": null
+        },
+        {
+          "anio": 2026,
+          "actual": null,
+          "predicted": 132251,
+          "lower": 127366,
+          "upper": 137135,
+          "fitted": null
+        },
+        {
+          "anio": 2027,
+          "actual": null,
+          "predicted": 134701,
+          "lower": 129061,
+          "upper": 140341,
+          "fitted": null
+        },
+        {
+          "anio": 2028,
+          "actual": null,
+          "predicted": 137151,
+          "lower": 130846,
+          "upper": 143457,
+          "fitted": null
+        },
+        {
+          "anio": 2029,
+          "actual": null,
+          "predicted": 139602,
+          "lower": 132694,
+          "upper": 146509,
+          "fitted": null
+        },
+        {
+          "anio": 2030,
+          "actual": null,
+          "predicted": 142052,
+          "lower": 134591,
+          "upper": 149513,
+          "fitted": null
+        }
+      ]
+    }
+  }
+}

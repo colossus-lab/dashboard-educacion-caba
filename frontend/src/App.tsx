@@ -7,6 +7,7 @@ import SeriesTemporales from "./sections/SeriesTemporales";
 import IndicadoresTrayectoria from "./sections/IndicadoresTrayectoria";
 import ProgramasCobertura from "./sections/ProgramasCobertura";
 import Comparativa from "./sections/Comparativa";
+import ComparativaInternacional from "./sections/ComparativaInternacional";
 import Vulnerabilidad from "./sections/Vulnerabilidad";
 import Directorio from "./sections/Directorio";
 
@@ -18,6 +19,7 @@ const SECTIONS = [
   { id: "indicadores", label: "Indicadores" },
   { id: "programas", label: "Programas y cobertura" },
   { id: "comparativa", label: "Comparativa nacional" },
+  { id: "internacional", label: "Comparativa internacional" },
   { id: "directorio", label: "Directorio" },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]["id"];
@@ -68,6 +70,7 @@ export default function App() {
         {section === "indicadores" && <IndicadoresTrayectoria />}
         {section === "programas" && <ProgramasCobertura />}
         {section === "comparativa" && <Comparativa />}
+        {section === "internacional" && <ComparativaInternacional />}
         {section === "directorio" && <Directorio />}
       </main>
 
