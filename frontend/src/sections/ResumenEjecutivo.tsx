@@ -12,6 +12,7 @@ import {
   useAnuarios,
   usePadronJurisdiccional,
 } from "../dataLoader";
+import { useChartHeight } from "../lib/useChartHeight";
 
 const TOOLTIP = { backgroundColor: "#ffffff", border: "1px solid #d5cfbc", borderRadius: 4, fontSize: 12.5 };
 
@@ -217,6 +218,8 @@ export default function ResumenEjecutivo() {
     return out;
   }, [anuarios, matriculaHistorica, ind, esi, boleto, comunaRanking, cabaRow, cabaRank, padron]);
 
+  const trendChartH = useChartHeight(280);
+
   return (
     <div>
       <div className="hero">
@@ -278,7 +281,7 @@ export default function ResumenEjecutivo() {
       <div className="card-grid">
         <div className="card">
           <h3>Matrícula histórica CABA · Educación común 2017-2023</h3>
-          <ResponsiveContainer width="100%" height={280}>
+          <ResponsiveContainer width="100%" height={trendChartH}>
             <AreaChart data={matriculaHistorica}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis dataKey="anio" stroke="#6b7791" />
@@ -295,7 +298,7 @@ export default function ResumenEjecutivo() {
 
         <div className="card">
           <h3>Distribución territorial · Matrícula por comuna (último año)</h3>
-          <ResponsiveContainer width="100%" height={280}>
+          <ResponsiveContainer width="100%" height={trendChartH}>
             <BarChart data={comunaRanking} layout="vertical" margin={{ left: 64 }}>
               <CartesianGrid stroke="#e3dfd2" strokeDasharray="3 3" />
               <XAxis type="number" stroke="#6b7791" tickFormatter={(v) => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v} />
