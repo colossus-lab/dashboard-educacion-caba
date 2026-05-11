@@ -80,7 +80,7 @@ export default function IndicadoresTrayectoria() {
       </div>
 
       <div className="card">
-        <h3>Tasa neta de escolarización CABA por nivel (2011-2022)</h3>
+        <h3>Tasa neta de escolarización CABA por nivel (2012-2022)</h3>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={
             (() => {
