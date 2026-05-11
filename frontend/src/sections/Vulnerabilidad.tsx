@@ -10,6 +10,7 @@ import { useRadiosCenso, useRadiosGeo, useSchoolsEnriched } from "../dataLoader"
 import { buildChoroplethScale } from "../lib/colorScale";
 import { RADIO_METRICS, type RadioMetric, type SchoolEnriched } from "../lib/vulnerabilidadTypes";
 import VulnerabilidadMap3D from "./VulnerabilidadMap3D";
+import HistogramaVulnerabilidad from "./HistogramaVulnerabilidad";
 
 const MAP_STYLE = "https://tiles.openfreemap.org/styles/positron";
 const CABA_BOUNDS: [[number, number], [number, number]] = [[-58.55, -34.72], [-58.32, -34.52]];
@@ -238,6 +239,9 @@ export default function Vulnerabilidad() {
           <div className="kpi-sub">15 comunas · INDEC CPV 2022</div>
         </div>
       </div>
+
+      {/* Histograma comparativo CABA vs GBA-24 */}
+      <HistogramaVulnerabilidad />
 
       {/* Filtros */}
       <div className="filters">

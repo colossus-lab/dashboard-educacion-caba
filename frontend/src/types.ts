@@ -206,3 +206,41 @@ export interface CiudadesInternacionalData {
   };
   ciudades: CiudadInternacional[];
 }
+
+export interface HistogramaBin {
+  x0: number;
+  x1: number;
+  caba: number;
+  gba: number;
+}
+
+export interface HistogramaStats {
+  n: number;
+  mean: number;
+  median: number;
+  p10: number;
+  p90: number;
+  std: number;
+}
+
+export interface HistogramaMetrica {
+  label: string;
+  format: "decimal" | "percent";
+  is_normalized: boolean;
+  range: [number, number];
+  bins: HistogramaBin[];
+  stats: { caba: HistogramaStats; gba: HistogramaStats };
+}
+
+export interface HistogramaVulnerabilidadData {
+  meta: {
+    generado: string;
+    n_caba: number;
+    n_gba: number;
+    fuente: string;
+    metodologia_score: string;
+    caveat_score: string;
+    ambitos: { caba: string; gba: string };
+  };
+  metricas: Record<string, HistogramaMetrica>;
+}
